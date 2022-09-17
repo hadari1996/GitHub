@@ -1,0 +1,60 @@
+body{
+
+    h2{
+        direction: rtl;
+       position: absolute;
+        right: 75px;
+        margin-bottom: 25px;
+        font-family: 'Rubik Dirt', cursive;
+        color:burlywood;
+        text-shadow: 0 2px 0 white;  
+
+    }
+     
+  #wrapper{
+    background-color: rgba(230, 209, 182, 0.76);
+    max-width: 1200px;
+    margin-bottom: 0;
+    font-family: 'Rubik Dirt', cursive;
+    #slider{
+      overflow-x:scroll;     
+      white-space: nowrap;
+      img{
+        height: 200px;
+
+      }
+
+
+    }
+    
+
+}
+
+
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 10px;
+  border-radius: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+
+  }
+ 

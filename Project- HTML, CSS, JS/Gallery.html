@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="he">
+    <head>
+        <title>Rachel Hacham</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="./StyleForNavbar.css" rel="stylesheet">
+        <link href="./Gallery_container.css" rel="stylesheet">
+        <link href="./slider.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    </head>
+    <body>
+        <header id="Header">
+                
+            <div id="Cnnection_div">
+                <ul>
+                    <li><a href="#"> <img class="connections" src="./facebook.png" alt="facebook"/> </a></li>
+                    <li><a href="#"> <img class="connections"  src="./whatsapp.png" alt="whatsapp"/> </a></li>
+                    <li><a href="#"> <img class="connections"  src="./twitter.png" alt="twitter" /> </a></li>
+                </ul>
+            </div>   
+
+
+            <div>
+            <nav class="nav-bar">
+                <img id="logo" src="./photologo.png" alt="logo" />
+                <input  id="Check"  type="checkbox"  name="Check"/> 
+                <label for="Check"  > 
+                    <img id="icon_menu" src="./dots-menu.png"  alt="moblie_menu"  />
+                </label>
+              
+                <div id="menu">           
+                     <ul>
+                    <li><a class="Link" href="#"> Home</a></li>
+                    <li><a class="Link" href="#">contacts</a></li>
+                    <li><a class="Link" href="#">About us</a></li>
+                    </ul>
+                </div>
+    
+            </nav>
+        </div>
+        </header>
+
+        <div class="container2">
+                <div class="col">
+                  
+                        <img class="img_ho" src="./main_imges/family.jpg" alt="FAMILY">
+                        <h2 class="H2" style=" bottom:50px;">FAMILY</h2>
+                        <p>"Family- a little bit of crazy , <br/> a little bit of loud , <br/>a whole lot of LOVE"</p>
+               
+                </div>
+                <div class="col">
+                   
+                        <img class="img_ho" src="./main_imges/Hagada.jpg" alt="STORY">
+                        <h2 style="bottom: 25px;"  class="H2">STORY</h2>
+                        <p>"STOP DREAMING , <br/> START DOING"</p>
+                    
+                </div>
+                <div class="col">
+                  
+                        <img class="img_ho" src="./main_imges/masoret.jpg" alt="TRADITION">
+                        <h2  style="right: 100px;"  class="H2">TRADITION</h2>
+                        <p style="bottom: 20px;" >"THORA TZIVA LANOO MOSHE, <br/> MORASHA KHEILAT YAKOV</p>
+                 
+                </div>       
+                     <div class="col">
+                    
+                        <img class="img_ho" src="./main_imges/teva.jpg" alt="LIFE">
+                        <h2  class="H2">LIFE</h2>
+                        <p>"A simple Life is A beautiful Life <br/> START DOING"</p>
+                   
+                    </div>
+       
+           
+        </div>
+
+        <div id="wrapper">
+            <h2>LIFE</h2>
+
+            <div id="slider">
+                    <img src="./teva/7.jpg" alt="img1" />
+                    
+                    <img src="./teva/2.jpg" alt="img2" />
+                    
+                    <img src="./teva/3.jpg" alt="img3" />
+                    
+                    <img src="./teva/4.jpg" alt="img4" />
+                    
+                    <img src="./teva/5.jpg" alt="img5" />
+                    
+                    <img src="./teva/6.jpg" alt="img6" />
+                    
+                    <img src="./teva/8.jpg" alt="img7" />
+
+        
+            </div>
+        </div>
+
+        <div class="Add_Img">
+            <form id ="ADDForm" action="" method="get">
+                <div class="lab">
+                <label>Add your moment photo</label>  <br/>
+                </div>
+                <input for="submit" id="InputImg"  type="text"  name="search" placeholder="Search.." required /> 
+                <br/>
+                <div class="sub">
+                    <input type="submit" name="submit" value="Add" />
+                </div>
+            </form>
+
+        </div>
+    
+
+
+
+        <script src="./JsForGallery.js"></script>
+    </body>
+</html>

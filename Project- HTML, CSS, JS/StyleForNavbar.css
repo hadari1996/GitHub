@@ -1,0 +1,164 @@
+/* little screen */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#Header {
+  height: 100px;
+  position: relative;
+  background-color: burlywood;
+}
+#Header #Cnnection_div {
+  position: absolute;
+  left: 30px;
+}
+#Header #Cnnection_div ul {
+  position: absolute;
+  display: flex;
+  list-style-type: none;
+}
+#Header #Cnnection_div ul .connections {
+  width: 30;
+  height: 30px;
+  margin: 5px;
+  margin-top: 25px;
+  padding: 10px;
+}
+
+.nav-bar {
+  font-family: "Rubik Dirt", cursive;
+  display: flex;
+  flex-wrap: wrap;
+}
+.nav-bar #menu {
+  flex-basis: 100%;
+  max-height: 0;
+  overflow: hidden;
+  position: relative;
+  top: 100px;
+  margin-bottom: 100px;
+  display: flex;
+  list-style-type: none;
+  height: 100px;
+  width: 100%;
+  text-align: center;
+}
+.nav-bar #menu ul {
+  width: 100%;
+}
+.nav-bar #menu ul li {
+  list-style: none;
+  padding: 10px 50px 10px 50px;
+  color: rgb(44, 43, 34);
+  cursor: pointer;
+  transition: 0.3s linear all;
+  width: 100%;
+}
+.nav-bar #menu ul li .Link {
+  color: black;
+  text-decoration: none;
+}
+.nav-bar #menu ul li:hover {
+  color: rgb(89, 63, 63);
+  box-shadow: 50px 50px 50px burlywood inset;
+}
+.nav-bar #Check {
+  display: none;
+}
+.nav-bar #logo {
+  position: absolute;
+  top: 15px;
+  right: 90px;
+  width: 130;
+  height: 60px;
+}
+.nav-bar #icon_menu {
+  position: absolute;
+  top: 19px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+}
+.nav-bar label {
+  margin: 2px;
+}
+
+/* big screen */
+@media screen and (min-width: 980px) {
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  .Header {
+    height: 100px;
+    position: relative;
+    background-color: burlywood;
+  }
+  .Header #Cnnection_div {
+    position: absolute;
+    left: 30px;
+  }
+  .Header #Cnnection_div ul {
+    position: absolute;
+    display: flex;
+    list-style-type: none;
+  }
+  .Header #Cnnection_div ul .connections {
+    width: 30;
+    height: 30px;
+    margin: 5px;
+    margin-top: 25px;
+    padding: 10px;
+  }
+  .nav-bar {
+    font-family: "Rubik Dirt", cursive;
+    position: relative;
+    position: absolute;
+    right: 10px;
+    width: 60%;
+    min-width: 100px;
+    max-height: 100%;
+    margin: 0px;
+  }
+  .nav-bar #menu {
+    position: absolute;
+    top: 0;
+    right: 131px;
+    flex-basis: unset;
+    max-height: unset;
+    width: unset;
+    list-style-type: none;
+    height: 100px;
+  }
+  .nav-bar #menu ul {
+    display: flex;
+    width: unset;
+  }
+  .nav-bar #menu ul li {
+    padding: 35px 14px 25px 14px;
+    margin-left: 2px;
+    color: rgb(44, 43, 34);
+    cursor: pointer;
+    transition: 0.3s linear all;
+    width: unset;
+  }
+  .nav-bar #menu ul li .Link {
+    color: black;
+    text-decoration: none;
+  }
+  .nav-bar #menu ul li:hover {
+    box-shadow: 180px 100px 100px rgba(186, 124, 161, 0.395) inset;
+  }
+  .nav-bar #logo {
+    position: absolute;
+    top: 19px;
+    right: 20px;
+    width: 130;
+    height: 60px;
+  }
+  .nav-bar label {
+    display: none;
+    margin: 2px;
+  }
+}/*# sourceMappingURL=StyleForNavbar.css.map */

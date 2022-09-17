@@ -1,0 +1,164 @@
+
+
+
+
+.container2{
+    font-family: 'Rubik Dirt', cursive;
+    // font-weight: bold;
+    font-size: 25px;
+    margin-top: 20px;
+    display: flex;
+
+ 
+        
+            .col{ 
+                max-width: 100%;
+                max-height: 100%;
+                position: relative;
+                padding-bottom: 10px;
+                padding-left: 10px;
+
+                .img_ho{   
+                width: 100%;
+                height: 100%;
+              
+                }
+            
+                .H2{
+                    position:  absolute;
+                    bottom: 30px;
+                    right:120px;
+                    display: block;
+                    font-size: 16px;
+                    font-family: 'Rubik Dirt', cursive;
+                    color:burlywood;
+                    text-shadow: 0 2px 0 white;  
+                }
+
+                p{
+                     position:  absolute;
+                     bottom: 10px;
+                     left:50px;
+                     display: block;
+                     font-size: 12px;
+                     font-family: 'Shadows Into Light', cursive;
+                     color:burlywood;
+                     text-shadow: 0 1px 0 black;  
+
+                }
+
+
+            }
+    
+}
+
+
+
+.Add_Img{
+        background-color: burlywood;
+        max-width: 100%;
+        height: 150px;
+        margin: 10px 35px 10px 35px;
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        direction: rtl;
+    .lab{
+        max-width: 100%;
+        label{
+            font-family: 'Rubik Dirt', cursive;
+             display: flex;
+             justify-content:center;
+            
+        }
+    }
+
+   .sub{
+        max-width: 300px;
+        text-align: center;
+
+        input[type=submit]{
+                            font-family: 'Shadows Into Light', cursive;
+                            width: 150px;
+                            height: 30px;
+                            margin-top: 10px;   
+        }
+    } 
+
+    input[type=text] {
+                        width: 100%;
+                        box-sizing: border-box;
+                        border: 2px solid #ccc;
+                        border-radius: 4px;
+                        font-size: 16px;
+                        background-color: white;
+                        background-position: 10px 10px; 
+                        background-repeat: no-repeat;
+                        padding: 12px 20px 12px 40px;
+                        direction: rtl;
+    }
+    #ADDForm #InputImg{
+    direction: ltr;        
+    }
+}
+
+
+
+
+@media screen and (min-width:300px) {
+    .container2{ 
+                flex-wrap: wrap;
+                justify-content: center;
+                font-size: 15px;
+       
+                 .col{
+                      flex-basis:90%;
+
+                    }
+
+    }   
+  
+    #wrapper{
+        max-width:70%;
+        margin : 20px 35px 40px 35px;
+
+    }
+}
+
+@media screen and (min-width:600px){
+    .container2{ 
+                justify-content: center;
+                font-size: 15px;
+                flex-wrap: wrap;
+                .col {
+                        flex-basis: 45%;
+                             
+                     }
+                }
+    .wrapper{
+        max-width: 50%;
+        margin : 20px 35px 40px 35px;
+            }
+}
+    
+@media screen and (min-width:800px){
+    .container2{
+                justify-content: center;
+                font-size: 25px;
+                .col{
+                flex-wrap: nowrap;   
+                flex-basis: 23%;
+                position: relative;
+                
+                }
+
+    }
+}
+
+
+
+
+   
+
+
+

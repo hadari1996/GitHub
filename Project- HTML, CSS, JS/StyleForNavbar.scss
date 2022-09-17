@@ -1,0 +1,213 @@
+ /* little screen */
+
+*{
+ margin: 0;
+ padding: 0;
+
+
+}  
+
+#Header{
+
+    height: 100px;
+    position: relative;
+    background-color: burlywood;
+    
+     #Cnnection_div{
+
+         position: absolute;
+         left:30px;
+
+
+            ul{
+                position: absolute;
+                display: flex;
+                list-style-type: none;
+                .connections {
+                    width:30;
+                    height: 30px;
+                    margin: 5px;
+                    margin-top: 25px;
+                    padding:10px;
+                            }
+                }
+            }
+        }
+ .nav-bar{
+            
+            
+    font-family: 'Rubik Dirt', cursive;
+           display: flex;
+           flex-wrap: wrap;
+            #menu{
+                        flex-basis: 100%;
+                        max-height: 0;
+                        overflow: hidden;
+                        position: relative;
+                        top: 100px;
+                        margin-bottom: 100px;
+                        display: flex;
+                        list-style-type: none;
+                        height: 100px;
+                        width:100%;
+                        text-align: center;
+            
+                        ul{
+                        width: 100%;
+                        li {
+
+                            
+                            list-style: none;
+                            padding:10px 50px 10px 50px;
+                            color: rgb(44, 43, 34);
+                            cursor: pointer;
+                            transition: 0.3s linear all;
+                        width:100%;
+
+                        .Link{
+                            color: black;       
+                            text-decoration:none;
+                        }
+                        }
+
+                    
+                        li:hover {
+                            color: rgb(89, 63, 63);
+                            
+                            box-shadow: 50px 50px 50px  burlywood inset;
+                        }
+
+                    }
+             }
+
+            #Check{
+                    display:none;
+            }
+            #logo {
+                    position: absolute;
+                    top:15px;
+                    right:90px;
+                    width:130;
+                    height:60px;
+            }
+             #icon_menu {
+                    position: absolute;
+                    top:19px;
+                    right:10px;
+                    width:50px;
+                    height:50px;
+            }
+          
+            label {
+                margin: 2px;
+            }
+ }
+
+    /* big screen */ 
+
+
+    @media screen and (min-width: 980px) {
+        *{
+        margin: 0;
+        padding: 0;
+        }  
+        .Header {
+            height: 100px;
+            position: relative;
+
+            background-color: burlywood;
+            
+
+            #Cnnection_div{
+
+            position: absolute;
+            left:30px;
+
+            ul{
+                position: absolute;
+                display: flex;
+                list-style-type: none;
+            
+            .connections{
+                width:30;
+                height: 30px;
+                margin: 5px;
+                margin-top: 25px;
+                padding:10px;
+            }
+                }
+            }
+        }
+            .nav-bar {
+                font-family: 'Rubik Dirt', cursive;
+                position: relative;
+                position: absolute;
+                right:10px;
+                width: 60%;
+                // max-width: 420px;
+                min-width: 100px;
+                max-height: 100%;
+                margin: 0px;
+
+                #menu {
+                    position: absolute;
+                    top: 0;
+                    right: 131px;
+                    flex-basis: unset;
+                    max-height: unset;
+                    width: unset;
+                    list-style-type: none;
+                    height: 100px;
+                        ul{
+                            display: flex;
+                            width:unset;
+
+                    li  {
+
+                        padding: 35px 14px 25px 14px;
+                        margin-left: 2px;
+                    
+                        color: rgb(44, 43, 34);
+                        cursor: pointer;
+                        transition: 0.3s linear all;
+                        width:unset;
+                        
+                        .Link{
+                             color: black;   
+                            text-decoration:none;
+                        }
+                    }
+                    li:hover {
+
+                        box-shadow: 180px 100px 100px  rgba(186, 124, 161, 0.395) inset;
+                    }
+                    }
+                }
+
+
+                #logo {
+                    position: absolute;
+                    top:19px;
+                    right:20px;
+                    width:130;
+                    height:60px;
+                }
+
+                
+                    label {
+                        display: none;
+
+                            margin: 2px;
+
+                                
+                        }
+
+        }
+
+    }
+
+
+
+
+
+
