@@ -55,7 +55,7 @@ function onclick(){
     }
 }
 
-let mediaQuery = window.matchMedia('(min-width: 980px)')
+let mediaQuery = window.matchMedia('(min-width: 800px)')
 
 function handleTabletChange(e) {
   // Check if the media query is true
