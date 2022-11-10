@@ -1,0 +1,204 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #D462FF;
+}
+
+.board {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.board .wrapper {
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  border: solid black;
+}
+.board .wrapper .btn {
+  width: 33.3333333333%;
+  height: 33.3333333333%;
+  background-color: rgba(195, 138, 167, 0.427);
+  font-family: "Rubik Dirt", cursive;
+  font-size: 30px;
+  border: solid black 1px;
+  color: rgb(84, 26, 83);
+  cursor: pointer;
+  box-shadow: 10px 10px 10px 0px rgba(37, 36, 36, 0.3);
+}
+.board .wrapper .btn:hover {
+  background-color: rgba(236, 198, 218, 0.676);
+}
+
+.Cur_player {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 20px;
+  padding: 20px;
+  text-transform: uppercase;
+  background-image: linear-gradient(-225deg, #ae00ff, #001eff, #ae00ff);
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 400% auto;
+  color: rgb(180, 46, 46);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-animation: textclip 2s linear infinite;
+          animation: textclip 2s linear infinite;
+}
+
+@-webkit-keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.title {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.title p {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  font-size: 3rem;
+  background: linear-gradient(to bottom, #000, #000 60%, #fff 60%, #fff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-repeat: no-repeat;
+  transition: background 0.2s ease-out;
+  white-space: nowrap;
+}
+.title span {
+  position: relative;
+}
+.title span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 15px;
+  background: #000;
+  bottom: 9px;
+  transition: all 0.2s ease-out;
+}
+.title p:hover {
+  background-position: 0 11px;
+}
+.title span:hover:before {
+  transform: translateY(10px);
+}
+
+.button_reset {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.reset_btn {
+  position: relative;
+  padding: 1em 1.8em;
+  outline: none;
+  border: 1px solid #303030;
+  background: #212121;
+  color: #ae00ff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 15px;
+  overflow: hidden;
+  transition: 0.2s;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.reset_btn:hover {
+  box-shadow: 0 0 10px #ae00ff, 0 0 25px #001eff, 0 0 50px #ae00ff;
+  transition-delay: 0.6s;
+}
+
+.reset_btn span {
+  position: absolute;
+}
+
+.reset_btn span:nth-child(1) {
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #ae00ff);
+}
+
+.reset_btn:hover span:nth-child(1) {
+  left: 100%;
+  transition: 0.7s;
+}
+
+.reset_btn span:nth-child(3) {
+  bottom: 0;
+  right: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #001eff);
+}
+
+button:hover span:nth-child(3) {
+  right: 100%;
+  transition: 0.7s;
+  transition-delay: 0.35s;
+}
+
+.reset_btn span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, #ae00ff);
+}
+
+.reset_btn:hover span:nth-child(2) {
+  top: 100%;
+  transition: 0.7s;
+  transition-delay: 0.17s;
+}
+
+.reset_btn span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, #001eff);
+}
+
+.reset_btn:hover span:nth-child(4) {
+  bottom: 100%;
+  transition: 0.7s;
+  transition-delay: 0.52s;
+}
+
+.reset_btn:active {
+  background: #ae00af;
+  background: linear-gradient(to top right, #ae00af, #001eff);
+  color: #bfbfbf;
+  box-shadow: 0 0 8px #ae00ff, 0 0 8px #001eff, 0 0 8px #ae00ff;
+  transition: 0.1s;
+}
+
+.reset_btn:active span:nth-child(1) span:nth-child(2) span:nth-child(2) span:nth-child(2) {
+  transition: none;
+  transition-delay: none;
+}
