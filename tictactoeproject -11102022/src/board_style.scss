@@ -10,6 +10,7 @@ body{
 
 }
 
+
 .board{
     display: flex;
     justify-content: center;
@@ -226,4 +227,15 @@ p {
     transition: none;
     transition-delay: none;
    }
-   
+   .o-x-win{       
+animation-name: colorT !important;
+animation-duration: 1s;
+  
+}
+
+@keyframes colorT
+{
+0%{background-color:  rgba(243, 235, 235, 0.836);}
+50%{background-color:  #be84db;}
+100%{background-color:  rgba(243, 235, 235, 0.836 ) ;}
+}

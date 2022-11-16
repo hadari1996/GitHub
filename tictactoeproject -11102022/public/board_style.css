@@ -202,3 +202,34 @@ button:hover span:nth-child(3) {
   transition: none;
   transition-delay: none;
 }
+
+.o-x-win {
+  -webkit-animation-name: colorT !important;
+          animation-name: colorT !important;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+}
+
+@-webkit-keyframes colorT {
+  0% {
+    background-color: rgba(243, 235, 235, 0.836);
+  }
+  50% {
+    background-color: #be84db;
+  }
+  100% {
+    background-color: rgba(243, 235, 235, 0.836);
+  }
+}
+
+@keyframes colorT {
+  0% {
+    background-color: rgba(243, 235, 235, 0.836);
+  }
+  50% {
+    background-color: #be84db;
+  }
+  100% {
+    background-color: rgba(243, 235, 235, 0.836);
+  }
+}

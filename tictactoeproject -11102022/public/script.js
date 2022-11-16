@@ -19,15 +19,18 @@ function clickBtn(e) {
             Cur_player.textContent = "Current turn: player " + oSymbol;
             let checking = checkWin();
             if (checking.win) {
+                // console.log(checking.index1, checking.index2, checking.index3)
+                let check_win = document.querySelectorAll(".btn");
+                let i1 = check_win[checking.index1];
+                i1.textContent = "WIN";
+                i1.classList.add("o-x-win");
+                let i2 = check_win[checking.index2];
+                i2.textContent = "WIN";
+                i2.classList.add("o-x-win");
+                let i3 = check_win[checking.index3];
+                i3.textContent = "WIN";
+                i3.classList.add("o-x-win");
                 setTimeout(() => {
-                    console.log(checking.index1, checking.index2, checking.index3);
-                    let check_win = document.querySelectorAll(".btn");
-                    // let i1= check_win[checking.index1]
-                    // i1.textContent="WIN"
-                    // let i2= check_win[checking.index2] 
-                    // i2.textContent="WIN"
-                    // let i3= check_win[checking.index3]
-                    // i3.textContent="WIN"
                     alert("ניצחת שחקן " + xSymbol);
                     if (reset())
                         turn = true;
@@ -44,14 +47,17 @@ function clickBtn(e) {
             Cur_player.textContent = "Current turn: player " + xSymbol;
             let checking = checkWin();
             if (checking.win) {
+                let check_win = document.querySelectorAll(".btn");
+                let i1 = check_win[checking.index1];
+                i1.textContent = "WIN";
+                i1.classList.add("o-x-win");
+                let i2 = check_win[checking.index2];
+                i2.textContent = "WIN";
+                i2.classList.add("o-x-win");
+                let i3 = check_win[checking.index3];
+                i3.textContent = "WIN";
+                i3.classList.add("o-x-win");
                 setTimeout(() => {
-                    let check_win = document.querySelectorAll(".btn");
-                    let i1 = check_win[checking.index1];
-                    i1.textContent = "WIN";
-                    let i2 = check_win[checking.index2];
-                    i2.textContent = "WIN";
-                    let i3 = check_win[checking.index3];
-                    i3.textContent = "WIN";
                     alert("ניצחת שחקן " + oSymbol);
                     reset();
                 }, 100);
