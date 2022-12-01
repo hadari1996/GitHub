@@ -1,0 +1,115 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+body{
+    background-color: rgba(142, 96, 139, 0.541);
+}
+
+.block{
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+.title{
+    color: rgba(24, 10, 24, 0.224);
+    padding-left: 30px;
+    font-style: oblique;
+
+}
+
+.div-task{
+
+width: 200px;
+height: 150px;
+background-color: beige;
+
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+border-radius: 10px;
+box-shadow: 5px 5px 5px 5px rgba(129, 36, 111, 0.4);
+
+}
+
+
+label{
+    padding: 10px;
+    font-size: 20px;
+    color: rgb(224, 145, 215);
+    margin: 5px;
+}
+
+.sub{
+ 
+    width: 90px;
+    height: 30px;
+    border-radius:20px ;
+    border-color: rgb(228, 194, 227);
+    }
+
+    
+.sub:hover{
+ 
+    width: 90px;
+    height: 30px;
+    background-color: beige;
+    border-radius:19px ;
+    border-color: rgb(157, 170, 170);
+    }
+.input{
+margin-bottom: 10px;
+
+}
+
+ul{
+
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+}
+li{
+    list-style-type: none   ;
+    padding-left: 60px; 
+    /* padding-right: 150px; */
+    padding-top: 20px;
+    width:300px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: beige;
+    box-shadow: 10px 10px 10px  rgb(204, 170, 204);
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    /* position: absolute; */
+    text-align: center;
+    
+
+
+}
+
+.list_div{
+    background-color: rgb(38, 4, 38);
+    border-radius: 10px;
+    width: 350px;
+    margin-top: 20px;
+    /* height: 200px; */
+}
+.container_list{
+    
+    display: flex;
+    justify-content: center;
+   
+}
+
+.icon{
+position: relative;
+right: 15px;
+bottom:7px;
+
+}
