@@ -1,0 +1,125 @@
+
+body{  
+    overflow-y: hidden;
+    .sky{
+        width: 100%;
+
+       }
+   
+       .balloon{
+        position: absolute;
+        img{
+            width: 150px;
+            height: 150px;
+        }
+        img:hover{
+        cursor: pointer;
+        }
+
+    }
+.div_label{
+  display: flex;
+  align-content: flex-start;
+  position: absolute;
+  top: 5%;
+
+}
+.sum_score_div{
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 45%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 160px;
+  font-size: 25px;
+  font-weight: 600;
+  color: rgb(128, 16, 16);
+  cursor: default;
+  height: 55px;
+  text-align:center;
+  border: none;
+  background-size: 300% 100%;
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+}
+
+
+}
+.sum_score_label , .life ,.score{
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 160px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  background-size: 300% 200%;
+  border-radius: 50px;
+  -o-transition: all .4s ease-in-out;
+  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
+  background-image: linear-gradient(
+    to right,
+    #ed6ea0,
+    #ec8c69,
+    #f7186a,
+    #fbb03b);
+    text-align: center;
+    margin-left: 50px;
+    margin-top: 20px;
+    height: 30px;
+    padding-top: 10px;
+  
+}
+.score_label{
+  display: flex;
+  align-content: flex-start;
+  position: absolute;
+  top: 15%;
+
+}
+.reset_btn{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 45%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    width: 160px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    height: 55px;
+    text-align:center;
+    border: none;
+    background-size: 300% 100%;
+    border-radius: 50px;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .reset_btn:hover {
+    background-position: 100% 0;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+  }
+  
+  .reset_btn:focus {
+    outline: none;
+  }
+  
+  .reset_btn {
+    background-image: linear-gradient(
+      to right,
+      #ed6ea0,
+      #ec8c69,
+      #f7186a,
+      #fbb03b
+    );
+    box-shadow: 0 4px 15px 0 rgba(236, 116, 149, 0.75);
+  }
