@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"
+    integrity="sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="style.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+<div class="container">
+    <div class="screen">
+        <div class="screen__content">
+            <h1 class="register__header">Register</h1>
+            <form  class= "register" onsubmit="handleRegister(event)">
+
+                <div class="register__field">
+                    <i class="register__icon fas fa-user"></i>
+                <input class="register__input" type="email" id="email" placeholder="email" required>
+                </div>
+                <div class="register__field">
+                    <input class="register__input" type="password" id="password" placeholder="password" required>
+                </div>
+                <div class=""></div>
+                <button  class="button register__submit" type="submit"><span class="button__text">Register Now</span>
+					<i class="register__icon fas fa-chevron-right"></i></button>
+ 
+
+        </form>   
+            <div class="error__message_div">
+                <label class="error__message" ></label>
+            </div>
+             <div class="register__header__div">
+                <a  class="link" href="./login.html">Login</a>
+            </div>  
+        </div>
+    
+    </div>
+
+</div>  
+
+    <script src="./dist/app.js"></script>  
+</body>
+</html>

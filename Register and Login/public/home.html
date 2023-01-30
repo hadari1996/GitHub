@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"
+    integrity="sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link href="style2.css" rel="stylesheet">
+    <title>Home</title>
+</head>
+<body>
+
+
+<div class="container">
+    <div class="screen">
+        <div class="screen__content">
+            <h1 class="home__header">home</h1>
+            <form  class= "home" onsubmit="handleUpdatePassword(event)">
+
+                <div class="home__field">
+                    <i class="home__icon fas fa-user"></i>
+                <input class="home__input" type="text" placeholder="enter id to update" id="id" required>
+                </div>
+                <div class="home__field">
+                    <input class="home__input"  type="password" placeholder="enter updated password" id="passwordToUpdate" required>
+                </div>
+    
+                <button  class="button home__submit" type="submit"><span class="button__text">Update Password</span>
+					<i class="home__icon fas fa-chevron-right"></i></button>
+ 
+
+        </form>   
+            <div class="error__message_div">
+                <label class="error__message" ></label>
+            </div>
+             <div class="home__header__div">
+                <a  class="link" href="./login.html">Login</a>
+            </div>  
+        </div>
+    
+    </div>
+
+</div>  
+
+    <script src="./dist/app.js"></script>  
+</body>
+</html>
