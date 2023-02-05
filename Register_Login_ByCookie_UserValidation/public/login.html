@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.js"
+      integrity="sha512-rozBdNtS7jw9BlC76YF1FQGjz17qQ0J/Vu9ZCFIW374sEy4EZRbRcUZa2RU/MZ90X2mnLU56F75VfdToGV0RiA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link href="./dist/style1.css" rel="stylesheet" />
+    <title>Login</title>
+  </head>
+  <body onload="handleCheckIfUserIsconnected()">
+    <div class="container">
+      <div class="screen">
+        <div class="screen__content">
+          <h1 class="login__header">login</h1>
+          <form class="login" onsubmit="handleLogin(event)">
+            <div class="login__field">
+              <i class="login__icon fas fa-user"></i>
+              <input
+                class="login__input"
+                type="email"
+                id="loginEmail"
+                placeholder="email"
+                required
+              />
+            </div>
+            <div class="login__field">
+              <input
+                class="login__input"
+                type="password"
+                id="loginPassword"
+                placeholder="password"
+                required
+              />
+            </div>
+            <div class=""></div>
+            <button class="button login__submit" type="submit">
+              <span class="button__text">Login Now</span>
+              <i class="login__icon fas fa-chevron-right"></i>
+            </button>
+          </form>
+          <div class="error__message_div">
+            <label class="error__message"></label>
+          </div>
+          <div class="login__header__div">
+            <a class="link" href="./index.html">Register</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./dist/app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:400,700");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Raleway, sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #C7C5F4, #776BCC);
+}
+body .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+body .container .screen {
+  background: linear-gradient(90deg, #5D54A4, #7C78B8);
+  position: relative;
+  height: 600px;
+  width: 360px;
+  box-shadow: 0px 0px 24px #5C5696;
+}
+body .container .screen .screen__content {
+  z-index: 1;
+  position: relative;
+  height: 100%;
+}
+body .container .screen .screen__content .register__header {
+  margin-top: 50px;
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #c9c9cd;
+}
+body .container .screen .screen__content .register {
+  width: 320px;
+  padding: 30px;
+  padding-top: 10px;
+}
+body .container .screen .screen__content .register .register__field {
+  padding: 20px 0px;
+  position: relative;
+}
+body .container .screen .screen__content .register .register__field ::-moz-placeholder {
+  color: #fff;
+  opacity: 0.4;
+}
+body .container .screen .screen__content .register .register__field :-ms-input-placeholder {
+  color: #fff;
+  opacity: 0.4;
+}
+body .container .screen .screen__content .register .register__field ::placeholder {
+  color: #fff;
+  opacity: 0.4;
+}
+body .container .screen .screen__content .register .register__field .register__icon {
+  position: absolute;
+  top: 10px;
+  color: #7875B5;
+}
+body .container .screen .screen__content .register .register__field .register__input {
+  border: none;
+  border-bottom: 2px solid #D1D1D4;
+  background: none;
+  padding: 0px;
+  padding-left: 24px;
+  font-weight: 700;
+  width: 75%;
+  transition: 0.2s;
+}
+body .container .screen .screen__content .register .register__field .register__input:active,
+body .container .screen .screen__content .register .register__field .register__input:focus,
+body .container .screen .screen__content .register .register__field .register__input:hover {
+  outline: none;
+  border-bottom-color: #6A679E;
+}
+body .container .screen .screen__content .register .register__submit {
+  background: #fff;
+  font-size: 14px;
+  margin-top: 30px;
+  padding: 16px 20px;
+  border-radius: 26px;
+  border: 1px solid #D4D3E8;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: #4C489D;
+  box-shadow: 0px 2px 2px #5C5696;
+  cursor: pointer;
+  transition: 0.2s;
+}
+body .container .screen .screen__content .register .register__submit:active,
+body .container .screen .screen__content .register .register__submit:focus,
+body .container .screen .screen__content .register .register__submit:hover {
+  border-color: #6A679E;
+  outline: none;
+}
+body .container .screen .screen__content .error__message_div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+body .container .screen .screen__content .register__header__div {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+body .container .screen .screen__content .register__header__div .link {
+  text-decoration: none;
+  padding-top: 1px;
+  text-align: center;
+}
