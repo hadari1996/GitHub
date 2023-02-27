@@ -1,32 +1,21 @@
 import React from "react";
 import { useState } from "react";
 
-
 const Color = () => {
+  const [color, setColor] = useState<string>("black");
 
-  const [color, setColor] = useState("enter your color");
-
-  function handleYourColor() {
-    const inputColor = document.querySelector("input")!.value!;
-    if (!inputColor) {
-        setColor("Enter your color please!");
-    } else {
-      setColor(inputColor);
-    }
+  function handleYourColor(event: any) {
+    setColor(event.target.value);
   }
 
   return (
     <div>
-      {/* <input type="color" onChange={handleYourColor}>Enter your color</input>
-  
-      <div style={{backgroundColor:color}}>
-
-    </div>  */}
+      <input placeholder="Enter your color" type="color" id="color" onChange={handleYourColor}/>
+      <div style={{ backgroundColor: color,
+                    width:'100px',
+                    height:'100px' }}></div>
     </div>
-
   );
 };
 
 export default Color;
-
-
