@@ -13,7 +13,7 @@ import User from "../user";
 interface FriendsProps {
   friends: User;
   currentUser: User;
-  changeChat: any;
+  changeChat: User;
 }
 
 export const Friends: FC<FriendsProps> | any = ({
@@ -21,31 +21,30 @@ export const Friends: FC<FriendsProps> | any = ({
   currentUser,
   changeChat,
 }: {
-  friends: any[];
+  friends: User[];
   currentUser: User;
   changeChat: any;
 }) => {
   const AvatarsApi = "https://api.dicebear.com/6.x/lorelei/png?seed=1  ";
-  const [currentUserName, setCurrentUserName] = useState(undefined);
-  const [currentUserImg, setCurrentUserImg] = useState(undefined);
-  const [currentSelected, setCurrentSelected] = useState(undefined);
+  const [currentUserName, setCurrentUserName] = useState("");
+  const [currentUserImg, setCurrentUserImg] = useState("");
+  const [currentSelected, setCurrentSelected] = useState("");
   const dispatch = useAppDispatch();
   const user = useAppSelector(userSelector);
   const navigate = useNavigate();
-  console.log(friends);
   useEffect(() => {
     dispatch(getUserByCookie);
     getCurrentUser(user);
   }, []);
 
-  const getCurrentUser = async (user: any) => {
+  const getCurrentUser = async (user: User|any) => {
     if (await user) {
       setCurrentUserImg(user.avatarImage);
       setCurrentUserName(user.name);
     }
   };
 
-  const changeCurrentChat = (index: any, friend: User) => {
+  const changeCurrentChat = (index: string, friend: User) => {
     setCurrentSelected(index);
     changeChat(friend);
   };
@@ -71,7 +70,7 @@ export const Friends: FC<FriendsProps> | any = ({
             <div className="friends">
               {friends &&
                 friends.map &&
-                friends.map((friend: any, index: any) => {
+                friends.map((friend: User, index:any) => {
                   return (
                     <div
                       className={`friend ${

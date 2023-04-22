@@ -37,7 +37,7 @@ export const Login = () => {
   if (user)  navigate("/chat");
 
 
-  const handleOnSubmit = async (event: any) => {
+  const handleOnSubmit = async (event:  React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
       if (handleValidation()) {
@@ -96,7 +96,7 @@ export const Login = () => {
             type="name"
             placeholder="Name"
             name="name"
-            onChange={(e) => handleChange(e)}
+            onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
             min="3"
           />
 
@@ -104,7 +104,7 @@ export const Login = () => {
             type="password"
             placeholder="Password"
             name="password"
-            onChange={(e) => handleChange(e)}
+            onChange={(e:React.ChangeEvent<HTMLInputElement>) => handleChange(e)}
           />
 
           <button type="submit"> Login</button>

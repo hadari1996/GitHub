@@ -8,7 +8,7 @@ interface welcomeProps {
   }
   
 
- const Welcome :FC<welcomeProps>|any = ({currentUser}: {currentUser: User;}) => {
+ const Welcome :FC<welcomeProps>|User = ({currentUser}: {currentUser: User;}) => {
   return (
     <div  className="container3">
         <img src={Robot} alt="Robot" />

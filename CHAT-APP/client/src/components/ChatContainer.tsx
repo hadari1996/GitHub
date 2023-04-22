@@ -7,26 +7,29 @@ import { Logout } from "./Logout";
 import ChatInputs from "./ChatInputs";
 import axios from "axios";
 import {v4 as uuidv4} from "uuid";
+import { Socket } from "socket.io-client";
 
 
 interface ChatContainerProps {
-  currentChat: any;
+  currentChat: any|User;
+  currentUser: any|User,
+  socket:any,
 }
 
 
 
-const ChatContainer: FC<ChatContainerProps> | any = ({
+const ChatContainer: FC<ChatContainerProps>  = ({
   currentChat,
   currentUser,
   socket,
 }: {
-  currentChat: any;
+  currentChat: User;
   currentUser: User;
   socket: any;
 }) => {
   const [messages, setMessages] = useState([]);
   const [arrivalMessage, setArrivalMessage] = useState({})
-  const scrollRef = useRef<null|any>(null);
+  const scrollRef =React.useRef<null | HTMLInputElement>(null);
   const getAllMessages = async () => {
     if(currentChat){
       const response = await axios.post(`/api/v1/messages/getAllMessage`, {
@@ -61,7 +64,7 @@ const ChatContainer: FC<ChatContainerProps> | any = ({
 
   useEffect(() => {
     if (socket.current)
-      socket.current.on("msg-recieve", (msg: any) => {
+      socket.current.on("msg-recieve", (msg: String) => {
 
         setArrivalMessage({ fromSelf:false, message: msg , createdDate:Date() });
       });

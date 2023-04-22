@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, ChangeEvent } from "react";
 import styled from "styled-components";
 import Logo from "../assets/Logo.svg";
 import "../App.scss";
@@ -37,7 +37,7 @@ export const Register = () => {
 
   if (user) navigate("/");
 
-  const handleOnSubmit = async (event: any) => {
+  const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     try {
       event.preventDefault();
       if (handleValidation()) {
@@ -75,7 +75,7 @@ export const Register = () => {
     return true;
   };
 
-  const handleChange = (event: any) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
 

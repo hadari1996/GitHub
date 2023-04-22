@@ -15,7 +15,14 @@ import ChatContainer from "../components/ChatContainer";
 import { io } from "socket.io-client";
 
 
+
+
 export const Chat = () => {
+
+  // const {  } = process.env;
+  // require('dotenv').config()
+
+
   const socket=React.useRef<any>(null);;
   const navigate = useNavigate();
   const [currentUser, setCurrentUser]=useState("");
@@ -24,6 +31,7 @@ export const Chat = () => {
   const [isLoaded, setIsLoaded] =useState(false);
   const dispatch = useAppDispatch();
   const user = useAppSelector(userSelector);
+
  
     useEffect(() => {
       dispatch(getUserByCookie);
@@ -35,7 +43,7 @@ useEffect(()=>{
   if(user)
   {
 
-    socket.current= io(`http://localhost:4000`);
+    socket.current= io('http://localhost:4000');
      socket.current.emit("add-user", user._id);
      
   }
@@ -73,7 +81,7 @@ useEffect(()=>{
         
         <Friends friends={friends} currentUser={currentUser} changeChat={handleChangeChat}/>
         {
-          isLoaded && currentChat===undefined?     <Welcome currentUser={currentUser}/>:
+          // isLoaded && currentChat===undefined?     <Welcome currentUser={currentUser}/>:
           <ChatContainer currentChat={currentChat} currentUser={currentUser} socket={socket}/>
         }
  

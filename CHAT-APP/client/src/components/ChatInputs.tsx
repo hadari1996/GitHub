@@ -1,7 +1,7 @@
 import React, { FC } from 'react'
 import "../ChatInputs.scss";
 import {IoMdSend} from "react-icons/io" 
-import Picker from "emoji-picker-react"
+import Picker, { IEmojiData } from "emoji-picker-react"
 import {BsEmojiSmileFill} from "react-icons/bs"
 import { useState } from 'react';
 
@@ -17,7 +17,7 @@ import { useState } from 'react';
         setShowEmojiPicker(!showEmojiPicker);
      }
 
-     const handleEmojiClick=(event:any, emojiObject:any) =>{
+     const handleEmojiClick=(event:React.MouseEvent<Element, MouseEvent>, emojiObject:IEmojiData) =>{
         let message= msg;
         message+=emojiObject.emoji;
         setMsg(message);
@@ -39,7 +39,7 @@ import { useState } from 'react';
                 }
             </div>
         </div>
-        <form className='input-container' onSubmit={(event:any)=>sendChat(event)}>
+        <form className='input-container' onSubmit={(event: React.FormEvent<HTMLFormElement>|any)=>sendChat(event)}>
             <input type="text" placeholder='Type your message' value={msg} onChange={(event)=>
             setMsg(event.target.value)}/>
             <button type="submit" className='submit'>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, MouseEventHandler } from "react";
 import styled from "styled-components";
 import "../App.scss";
 import { toast, ToastContainer } from "react-toastify";
@@ -14,6 +14,8 @@ import Login from "./Login";
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
 />;
 
+
+
 export default function MyAvatar() {
   const dispatch = useAppDispatch();
   const user = useAppSelector(userSelector);
@@ -28,13 +30,13 @@ export default function MyAvatar() {
   const navigate = useNavigate();
   if (!user) navigate("/login");
   const [Loading, setLoading] = useState(true);
-  const [theAvatar, setTheAvatar] = useState(undefined);
+  const [theAvatar, setTheAvatar] = useState(Number);
 
   const createPic = () => {
     return `${AvatarsApi}/${Math.round(Math.random() * 5000)}`;
   };
 
-  const [avatarArray, setAvaterAarry] = useState<any[]>([
+  const [avatarArray, setAvaterAarry] = useState<string[]>([
     createPic(),
     createPic(),
     createPic(),
@@ -67,7 +69,6 @@ export default function MyAvatar() {
   };
   const avatarsImges = async () => {
     try {
-      let pic: any = ``;
       for (let i = 0; i < 4; i++) {
         const { data } = await axios.get(
           `${AvatarsApi}/${Math.round(Math.random() * 5000)}.png`
@@ -76,7 +77,7 @@ export default function MyAvatar() {
       }
 
       setLoading(false);
-    } catch (error: any) {
+    } catch (error:any) {
       console.error(error.message);
     }
   };
@@ -103,7 +104,7 @@ export default function MyAvatar() {
                       src={image}
                       alt=""
                       id={`${idx}`}
-                      onClick={(ev: any) => {
+                      onClick={(ev : React.MouseEvent<HTMLImageElement>|any) => {
                         setTheAvatar(ev.target.id);
                       }}
                     />
