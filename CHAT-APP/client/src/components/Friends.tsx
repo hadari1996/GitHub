@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Logo from "../assets/Logo.svg";
 import "../Friends.scss";
-import User from "../user";
+import { User } from "../features/user/userModel";
 
 interface FriendsProps {
   friends: User;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import User from "../user";
+// import User from "../user";
 import { FC } from "react";
 import Robot from "../assets/🤖 Robot Waving.gif";
 import "../ChatContainer.scss";
@@ -8,11 +8,13 @@ import ChatInputs from "./ChatInputs";
 import axios from "axios";
 import {v4 as uuidv4} from "uuid";
 import { Socket } from "socket.io-client";
+import { Message } from "../message/messege";
+import { User } from './../features/user/userModel';
 
 
 interface ChatContainerProps {
-  currentChat: any|User;
-  currentUser: any|User,
+  currentChat: User | undefined;
+  currentUser: User | undefined,
   socket:any,
 }
 
@@ -23,15 +25,15 @@ const ChatContainer: FC<ChatContainerProps>  = ({
   currentUser,
   socket,
 }: {
-  currentChat: User;
-  currentUser: User;
+  currentChat: User | undefined;
+  currentUser: User | undefined;
   socket: any;
 }) => {
   const [messages, setMessages] = useState([]);
   const [arrivalMessage, setArrivalMessage] = useState({})
   const scrollRef =React.useRef<null | HTMLInputElement>(null);
   const getAllMessages = async () => {
-    if(currentChat){
+    if(currentChat && currentUser != undefined){
       const response = await axios.post(`/api/v1/messages/getAllMessage`, {
         from: currentUser._id,
         to: currentChat._id,
@@ -44,15 +46,16 @@ const ChatContainer: FC<ChatContainerProps>  = ({
   };
   const handleSendMsg = async (msg: any, createdDate:Date) => {
     await axios.post(`/api/v1/messages/addMessage`, {
-      from: currentUser._id,
-      to: currentChat._id,
+      from: currentUser!._id,
+      to: currentChat!._id,
       message: msg,
   
       createdDate: createdDate
         });
+
     socket.current.emit("send-msg", {
-      to: currentChat._id,
-      from: currentUser._id,
+      to: currentChat!._id,
+      from: currentUser!._id,
       message: msg,
       createdDate: createdDate
     });
@@ -64,7 +67,7 @@ const ChatContainer: FC<ChatContainerProps>  = ({
 
   useEffect(() => {
     if (socket.current)
-      socket.current.on("msg-recieve", (msg: String) => {
+      socket.current.on("msg-recieve", (msg: any) => {
 
         setArrivalMessage({ fromSelf:false, message: msg , createdDate:Date() });
       });

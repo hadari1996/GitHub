@@ -5,7 +5,6 @@ const saltRounds = 10;
 export async function register(req, res) {
   try {
     const { password, confirmPassword, name, email } = req.body;
-    console.log(password, confirmPassword, name, email);
     const userNameCheck = await UserModel.findOne({ name });
     if (userNameCheck) throw new Error("Username already used");
     const emailCheck = await UserModel.findOne({ email });
@@ -44,7 +43,6 @@ export async function register(req, res) {
 export async function login(req, res) {
   try {
     const { password, name } = req.body;
-    console.log(password, name);
     const userLogin = await UserModel.findOne({ name });
     if (!userLogin)
       throw new Error("Username does not exist or password not matched ");
@@ -94,8 +92,8 @@ export async function allFriends(req, res) {
     const friends = await UserModel.find({
       _id: { $ne: req.params.id },
     }).select(["email", "name", "avatarImage", "_id"]);
-    console.log(typeof friends);
-    console.log(friends);
+    // console.log(typeof(friends));
+    // console.log(friends);
     res.send({ friends: friends });
   } catch (error) {
     res.status(500).send({ error: error.message, status: false });

@@ -1,5 +1,6 @@
 import React from 'react'
-import User from '../user';
+// import User from '../user';
+import { User } from '../features/user/userModel';
 import { FC } from "react";
 import Robot from "../assets/🤖 Robot Waving.gif";
 import "../Welcome.scss";

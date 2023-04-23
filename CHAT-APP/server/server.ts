@@ -54,12 +54,11 @@ io.on("connection", (socket) => {
   });
 
   socket.on("send-msg", (data) => {
+    console.log("this is from server socket")
     const sendUserSocket = global.onlineUsers.get(data.to);
 
     if (sendUserSocket) {
       socket.to(sendUserSocket).emit("msg-recieve", data.message , data.createdDate);
     }
-
-
   });
 });

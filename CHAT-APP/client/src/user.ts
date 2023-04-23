@@ -1,4 +1,4 @@
-type User = {
+type User1 = {
     map(arg0: (friend?: any, index?: any) => JSX.Element): import("react").ReactNode;
     _id?: string,
     name?:string,
@@ -8,4 +8,4 @@ type User = {
     avatarImage?:string
   };
 
-  export default User
+  export default User1
