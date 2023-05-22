@@ -1,0 +1,27 @@
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: left;
+  height: 100px;
+  max-width: 1350px;
+  background-color: burlywood;
+  position: relative;
+}
+.navbar ul {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.navbar ul li {
+  list-style: none;
+  padding: 0.5rem;
+  text-underline-offset: none;
+}
+.navbar ul li .heart {
+  height: 7vh;
+  width: 7vw;
+}
+.navbar ul li input {
+  font-family: FontAwesome;
+}
