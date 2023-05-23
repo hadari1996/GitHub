@@ -6,6 +6,11 @@ import { store } from "./app/store";
 import { Provider } from "react-redux";
 import Register from "./views/Register";
 import { DressesStore } from "./views/DressesStore";
+import { Admin } from "./views/Admin";
+import { AddDress } from "./components/AddDress";
+import { UpdateDress } from "./components/UpdateDress";
+import { DeleteDress } from "./components/DeleteDress";
+import Page404 from "./views/Page404";
 
 function App() {
   return (
@@ -14,9 +19,13 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Login />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/DressesStore" element={<DressesStore />} /> 
-
+            <Route path="/register" element={<Register />} />
+            <Route path="/dresses-store" element={<DressesStore/>} /> 
+            <Route path="/admin" element={<Admin />} /> 
+            <Route path="/admin/add-dress" element={<AddDress/>}/>
+            <Route path="/admin/update-dress" element={<UpdateDress/>}/>
+            <Route path="/admin/delete-dress" element={<DeleteDress/>}/>
+            <Route path="*" element={<Page404 />} />
           </Routes>
         </BrowserRouter>
         </Provider>

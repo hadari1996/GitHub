@@ -32,6 +32,10 @@ app.use(cookieParser());
 import userRoutes from "./API/users/userRoutes";
 app.use("/api/users", userRoutes);
 
+
+import dressRoutes from "./API/dresses/dressRoutes";
+app.use("/api/dresses", dressRoutes);
+
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });

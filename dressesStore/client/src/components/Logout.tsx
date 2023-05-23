@@ -13,7 +13,6 @@ export const Logout = () => {
         try{
             const {data}= await axios.get(`/api/users/logout`);
             const{ok}=data;
-            console.log(ok)
             if(ok) {
                 dispatch(logout());
                 navigate("/");}

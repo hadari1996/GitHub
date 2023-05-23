@@ -8,9 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { getUserByCookie } from "../features/user/userAPI";
 import { userSelector } from "../features/user/userSlice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { DressesStore } from "./DressesStore";
-import { error } from "console";
-
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -32,40 +29,12 @@ export const Login = () => {
   useEffect(() => {
     dispatch(getUserByCookie());
   }, []);
-//   useEffect(() => {
-//   if (user) 
-//   {
-//     navigate("/DressesStore");
-// }
-// }, [user]);
 
-
-
-  const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    try {
-      event.preventDefault();
-      if (handleValidation()) {
-        const { password, name } = values;
-        // console.log(password, name )
-        const { data } = await axios.post(`/api/users/login`, {
-          password,
-          name,
-        });
-
-        const { ok, userArray , error} = data;
-        if (ok) {
-          navigate("/DressesStore");
-        }
-        else  {
-         throw new error(`${error}`)
-        }
-      }
-  
-    } catch (error: any) {
-      console.error(error.message);
-      toast.error(error.response.data.error, toastOptions);
+  useEffect(() => {
+    if (user) {
+      navigate("/dresses-store");
     }
-  };
+  }, [user]);
 
   const handleValidation = () => {
     const { password, name } = values;
@@ -80,43 +49,73 @@ export const Login = () => {
     return true;
   };
 
+  const handleOnSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    try {
+      event.preventDefault();
+      if (handleValidation()) {
+        const { password, name } = values;
+        const { data } = await axios.post(`/api/users/login`, {
+          password,
+          name,
+        });
+
+        const { ok, userArray, role, error } = data;
+        if (error) throw error;
+        if (ok && !role) {
+          navigate("/dresses-store");
+        } else if (ok && role) {
+          navigate("/admin");
+        }
+      }
+    } catch (error: any) {
+      console.error(error);
+      toast.error(error, toastOptions);
+    }
+  };
+
   const handleChange = (event: any) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
-  if(user) return <DressesStore/> 
-  else
+
   return (
     <>
       <div className="FormContainer">
-        <form onSubmit={(ev) => handleOnSubmit(ev)}>
-          <div className="brand">
-            <h1>login</h1>
-          </div>
-          <input
-            type="name"
-            placeholder="Name"
-            name="name"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleChange(e)
-            }
-            min="3"
-          />
+        <div className="fromWrapper">
+          <form onSubmit={(ev) => handleOnSubmit(ev)}>
+            <div className="brand">
+              <h1>login</h1>
+            </div>
+            <input
+              type="name"
+              placeholder="Name"
+              name="name"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                handleChange(e)
+              }
+              min="3"
+            />
 
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleChange(e)
-            }
-          />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                handleChange(e)
+              }
+            />
 
-          <button type="submit"> Login</button>
-          <span>
-            Don't have an accout? <Link to="/register">Register</Link>
-          </span>
-        </form>
+            <button type="submit"> Login</button>
+            <span>
+              Don't have an accout? <Link to="/register">Register</Link>
+            </span>
+          </form>
+        </div>
+        <img
+          src="https://rachelsitbon.fashion/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-06-at-15.31.36.jpeg"
+          alt="dress"
+        />
       </div>
+
       <ToastContainer />
     </>
   );

@@ -7,14 +7,14 @@ export const getUserByCookie= createAsyncThunk(
 async (_, thunkApi)=>{
 try{
 const {data}= await axios.get(`/api/users/get-user-by-cookie`);
-console.log(data)
+// console.log(data)
 if(!data)
 throw new Error("Couldn't receive data from axios GET '/get-user-by-cookie' from: userAPI ");
 const {userDB}= data;
 return userDB;
 }
 catch (error: any) {
-    console.error(error);
+    // console.error(error);
     return thunkApi.rejectWithValue({
       error: error.message,
       message: error.message,
