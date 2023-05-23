@@ -3,7 +3,7 @@ import Dress from "./../../../client/src/types/dress";
 
 export async function getAllDresses(req, res) {
   try {
-    const query = `select * from dresses`;
+    const query = `SELECT * FROM dresses`;
     connection.query(query, (err, results, fields) => {
       if (err) throw err;
 
@@ -17,13 +17,11 @@ export async function getAllDresses(req, res) {
 export async function searchDress(req, res) {
   try {
     const nameDress = req.params.name;
-    const query = `SELECT * FROM DRESSES where dress_name like ('%${nameDress}%')`;
+    const query = `SELECT * FROM DRESSES WHERE dress_name LIKE ('%${nameDress}%')`;
     connection.query(query, (error, results, fields) => {
       try {
         if (results.length == 0) throw new Error("Dress is not exsits");
         if (error) throw error;
-        console.log(results);
-
         res.send({ ok: true, dressesArr: results });
       } catch (error) {
         res.status(500).send({ ok: false, error: error.message });
@@ -37,15 +35,15 @@ export async function searchDress(req, res) {
 export async function addDresses(req, res) {
   try {
     const { srcDress, nameDress, priceDress } = req.body;
-    const query = `SELECT * from dresses WHERE dress_name='${nameDress}';`;
+    const query = `SELECT * FROM dresses WHERE dress_name='${nameDress}';`;
     connection.query(query, (err, results, fields) => {
       try {
         if (err) throw err;
         if (results.length > 0) {
           throw new Error("Dress is exsits ");
         } else {
-          const query = `insert into dresses ( dress_name, dress_price, img )
-          values('${nameDress}', '${priceDress}', '${srcDress}' )`;
+          const query = `INSERT INTO dresses ( dress_name, dress_price, img )
+          VALUES('${nameDress}', '${priceDress}', '${srcDress}' )`;
           connection.query(query, (err, results, fields) => {
             try {
               if (err) throw err;
@@ -55,7 +53,6 @@ export async function addDresses(req, res) {
                 results: dress_id,
               });
             } catch (error) {
-              console.log(error);
               res.status(500).send({ ok: false, error: error.message });
             }
           });
@@ -79,7 +76,7 @@ export async function setSizeQuantity(req, res) {
         const dressSizes: number[] = results3.size_id;
         for (let i = 0; i < results3.length; i++) {
           const query3 = `INSERT INTO inventory (dress_id, size_id  , quantity)
-                        values('${dress_id}', '${results3[i].size_id}', 0)`;
+                        VALUES('${dress_id}', '${results3[i].size_id}', 0)`;
           connection.query(query3, (err, results2, fields) => {
             if (err) throw err;
           });
@@ -114,8 +111,8 @@ export async function updateInventory(req, res) {
   try {
     const { quantity, size_id } = req.body;
     const { dress_id } = req.params;
-    const query = `update inventory set quantity ='${quantity}' 
-    where dress_id='${dress_id}' and size_id='${size_id}'`;
+    const query = `UPDATE inventory SET quantity ='${quantity}' 
+    WHERE dress_id='${dress_id}' AND size_id='${size_id}'`;
     connection.query(query, (error, results, fields) => {
       if (error) throw error;
 
@@ -179,23 +176,20 @@ export async function getDressSizes(req, res) {
 export async function deleteDress(req, res) {
   try {
     const { nameDress } = req.params;
-    console.log(nameDress);
-    const query1 = ` select * from dresses WHERE dress_name='${nameDress}';`;
+    const query1 = ` SELECT * FROM dresses WHERE dress_name='${nameDress}';`;
     connection.query(query1, (error, results, fields) => {
       try {
         if (error) throw error;
-        console.log(results);
-        // if (results.length == 0) throw error("Dress not found");
       } catch {
         res.status(500).send({ error: error.message, status: false });
       }
     });
 
-    const query = ` DELETE from dresses WHERE dress_name='${nameDress}';`;
+    const query = ` DELETE FROM dresses WHERE dress_name='${nameDress}';`;
     connection.query(query, (error, results, fields) => {
       try {
         if (error) throw error;
-        const query = ` DELETE from inventory WHERE dress_id='${results.dress_id}';`;
+        const query = ` DELETE FROM inventory WHERE dress_id='${results.dress_id}';`;
         connection.query(query, (error, results1, fields) => {
           try {
             if (error) throw error;
@@ -220,19 +214,19 @@ export async function insertToRenting(req, res) {
   try {
     const { nameDress } = req.params;
     const { sizes, user } = req.body;
-    const query = `SELECT * FROM sizes where size='${sizes}' `;
+    const query = `SELECT * FROM sizes WHERE size='${sizes}' `;
     connection.query(query, (err, results, fields) => {
       try {
         if (err) throw err;
-        const query1 = `SELECT * FROM users where user_id='${user.user_id}' `;
+        const query1 = `SELECT * FROM users WHERE user_id='${user.user_id}' `;
         connection.query(query1, (err, results1, fields) => {
           try {
             if (err) throw err;
-            const query2 = `SELECT * FROM dresses where dress_name='${nameDress}' `;
+            const query2 = `SELECT * FROM dresses WHERE dress_name='${nameDress}' `;
             connection.query(query2, (err, results2, fields) => {
               try {
                 if (err) throw err;
-                const query3 = `insert into renting_dresses (user_id, dress_id, size_id, renting_date)
+                const query3 = `INSERT INTO renting_dresses (user_id, dress_id, size_id, renting_date)
                  VALUES ('${results1[0].user_id}', '${results2[0].dress_id}', '${results[0].size_id}', CURDATE() ) `;
                 connection.query(query3, (err, results3, fields) => {
                   try {
@@ -267,11 +261,11 @@ export async function getMyDress(req, res) {
     const { userId } = req.params;
     const query = `SELECT dresses.img, dresses.dress_id, dresses.dress_price , dresses.dress_name,
     sizes.size
-    FROM renting_dresses join dresses 
-    on renting_dresses.dress_id= dresses.dress_id
-    inner join sizes
-    on renting_dresses.size_id= sizes.size_id
-     where user_id='${userId}' `;
+    FROM renting_dresses JOIN dresses 
+    ON renting_dresses.dress_id= dresses.dress_id
+    INNER JOIN sizes
+    ON renting_dresses.size_id= sizes.size_id
+    WHERE user_id='${userId}' `;
     connection.query(query, (err, results, fields) => {
       try {
         if (err) throw err;

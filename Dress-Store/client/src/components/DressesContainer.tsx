@@ -1,7 +1,6 @@
 import React, { FC, SetStateAction, useEffect, useState } from "react";
 import Dress from "../types/dress";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../style/model.scss";
@@ -41,6 +40,7 @@ export const DressesContainer: FC<DressesContainerProps> = ({ dresses }) => {
             dresses.map((dress: Dress, index: number) => {
               return (
                 <DressCard
+                  key={index}
                   dress={dress}
                   index={index}
                   setCurrentIndex={setCurrentIndex}

@@ -76,7 +76,6 @@ export async function register(req, res) {
             res.cookie("userID", JWTCookie);
             res.send({ ok: true, message: results });
           } catch (error) {
-            console.log(error);
             res.status(500).send({ ok: false, error: error });
           }
         });
@@ -93,19 +92,16 @@ export async function getUserByCookie(req, res) {
   try {
     
     const { userID } = req.cookies;
-    //  console.log(userID);
     if (!userID) throw new Error("no cookie found");
     const secret = process.env.SECRET;
     if (!secret) throw new Error("couldn't find secret from .env");
     const decodedUserID = jwt.decode(userID, secret);
-    // console.log(decodedUserID)
     const { userId } = decodedUserID;
     if (!userId) throw new Error("couldn`t find user from cookies");
 
     const query = await `SELECT * from USERS WHERE USER_ID ='${userId}'`;
     await connection.query(query, async (error, results, fields) => {
       try {
-        console.log(results[0]);
         if (!results[0])
           throw new Error(`Couldn't find user id with the id: ${userId}`);
         const userDB = results[0];

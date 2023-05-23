@@ -97,7 +97,7 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
             <select
               name="sizes"
               className="size_option"
-              onChange={(event: any) => handleSelect(event)}
+              onChange={(event: React.BaseSyntheticEvent) => handleSelect(event)}
             >
               {sizes?.map((size, index) => {
                 return (

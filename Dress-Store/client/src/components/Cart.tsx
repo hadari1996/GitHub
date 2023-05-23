@@ -36,7 +36,6 @@ const Cart: FC<CartProps> = ({ display }) => {
       const { results } = data;
       setDressCart(results);
     } catch (error: any) {
-      console.error(error);
       toast.error(error.response.data.error, toastOptions);
     }
   };
