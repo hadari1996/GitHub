@@ -52,10 +52,7 @@ export const AddDress = () => {
           priceDress,
         });
         const { ok, results } = data;
-        console.log(results)
          data =await axios.post(`/api/dresses/set-size-quantity/${results}`);
-
-        console.log(`${results}`);
         if (!ok) throw new Error();
         else {
           const dress_id = results;

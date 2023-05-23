@@ -22,14 +22,10 @@ export const Register = () => {
   }, []);
 
   useEffect(() => {
-  if (user) 
-  {
-    navigate("/dresses-store");
-}
-}, [user]);
-
-
-
+    if (user) {
+      navigate("/dresses-store");
+    }
+  }, [user]);
 
   const [values, setValues] = useState({
     name: "",
@@ -62,15 +58,17 @@ export const Register = () => {
           user_Id,
           email,
           phoneNum,
-   
         });
-
-        navigate("/dresses-store");
+        const { ok, error } = data;
+        if (!ok) throw error;
+        if (error) throw error;
+        else {
+          navigate("/dresses-store");
+        }
       }
     } catch (error: any) {
       console.error(error.message);
-
-      toast.error(error.response.data.error, toastOptions);
+      toast.error(error, toastOptions);
     }
   };
 
@@ -94,56 +92,61 @@ export const Register = () => {
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValues({ ...values, [event.target.name]: event.target.value });
   };
-  // if(user) return <DressesStore/> 
-  // else
+
   return (
     <div className="FormContainer">
-      <form onSubmit={(ev) => handleOnSubmit(ev)}>
-        <div className="brand">
-          <h1>Register</h1>
-        </div>
-        <input
-          type="text"
-          placeholder="Name"
-          name="name"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="text"
-          placeholder="ID"
-          name="user_Id"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="text"
-          placeholder="Email"
-          name="email"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          name="password"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="password"
-          placeholder="Confirm Password"
-          name="confirmPassword"
-          onChange={(e) => handleChange(e)}
-        />
-        <input
-          type="text"
-          placeholder="Phone number "
-          name="phoneNum"
-          onChange={(e) => handleChange(e)}
-        />
+      <div className="fromWrapper">
+        <form onSubmit={(ev) => handleOnSubmit(ev)}>
+          <div className="brand">
+            <h1>Register</h1>
+          </div>
+          <input
+            type="text"
+            placeholder="Name"
+            name="name"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="text"
+            placeholder="ID"
+            name="user_Id"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="text"
+            placeholder="Email"
+            name="email"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="confirmPassword"
+            onChange={(e) => handleChange(e)}
+          />
+          <input
+            type="text"
+            placeholder="Phone number "
+            name="phoneNum"
+            onChange={(e) => handleChange(e)}
+          />
 
-        <button type="submit"> Create User</button>
-        <span>
-          Already have an account? <Link to="/">Login</Link>
-        </span>
-      </form>
+          <button type="submit"> Create User</button>
+          <span>
+            Already have an account? <Link to="/">Login</Link>
+          </span>
+        </form>
+      </div>
+      <img
+        src="https://rachelsitbon.fashion/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-06-at-15.31.36.jpeg"
+        alt="dress"
+      />
       <ToastContainer />
     </div>
   );

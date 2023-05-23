@@ -10,6 +10,7 @@ import { Admin } from "./views/Admin";
 import { AddDress } from "./components/AddDress";
 import { UpdateDress } from "./components/UpdateDress";
 import { DeleteDress } from "./components/DeleteDress";
+import Page404 from "./views/Page404";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/admin/add-dress" element={<AddDress/>}/>
             <Route path="/admin/update-dress" element={<UpdateDress/>}/>
             <Route path="/admin/delete-dress" element={<DeleteDress/>}/>
+            <Route path="*" element={<Page404 />} />
           </Routes>
         </BrowserRouter>
         </Provider>

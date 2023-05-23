@@ -58,7 +58,6 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
     try {
       event.preventDefault();
       const { nameDress, sizes } = values;
-      console.log(nameDress, sizes);
       const { data } = await axios.post(
         `/api/dresses/add-cart-dress/${nameDress}`,
         {

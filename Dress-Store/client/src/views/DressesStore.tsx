@@ -3,7 +3,6 @@ import { getUserByCookie } from "../features/user/userAPI";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { Link, useNavigate } from "react-router-dom";
 import { userSelector } from "../features/user/userSlice";
-import Login from "./Login";
 import { Navbar } from "./../components/Navbar";
 import { DressesContainer } from "./../components/DressesContainer";
 import Dress from "../types/dress";

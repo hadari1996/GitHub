@@ -3,10 +3,13 @@ import { Link } from "react-router-dom";
 import Cart from "./Cart";
 import { Logout } from "./Logout";
 import "../style/navbar.scss";
-import Dress from "../types/dress";
 import axios from "axios";
 import { useAppSelector } from "../app/hooks";
 import { userSelector } from "../features/user/userSlice";
+
+<link href="https://fonts.googleapis.com/css2?family=Alkatra&display=swap" rel="stylesheet"></link>
+
+
 
 interface NavBarProps {
   setDresses?: CallableFunction;

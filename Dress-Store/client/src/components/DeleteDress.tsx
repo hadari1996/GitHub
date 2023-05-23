@@ -6,15 +6,11 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { userSelector } from "../features/user/userSlice";
 import Dress from "../types/dress";
-import Iventory from "../types/iventory";
-import { getQuantityPrice } from "../helpers/helpers";
-import SizeSelector from "./SizeSelector";
 import { Navbar } from "./Navbar";
 export const DeleteDress = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const user = useAppSelector(userSelector);
-  const [dress, setDress] = useState<Dress[]>([]);
   const [values, setValues] = useState({
     nameDress: "",
   });
@@ -54,18 +50,16 @@ export const DeleteDress = () => {
         let { data } = await axios.delete(
           `/api/dresses/delete-dress/${nameDress}`
         );
-
-        const { error } = data;
+        const { ok, error, results } = data;
+        if (!ok) throw error;
         if (error) throw error;
-        const { results } = data;
-        alert(`${results} is deleted`);
+        else {
+          alert(`${results} is deleted`);
+        }
       }
-
-      // const ok = { data };
-      // if (!ok) throw new Error();
     } catch (error: any) {
-      console.error(error.message);
-      toast.error(error.message, toastOptions);
+      console.error(error);
+      toast.error(error, toastOptions);
     }
   };
 
@@ -86,6 +80,7 @@ export const DeleteDress = () => {
 
           <button type="submit"></button>
         </form>
+        <ToastContainer />
       </div>
     </>
   );

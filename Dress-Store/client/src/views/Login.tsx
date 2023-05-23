@@ -8,8 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { getUserByCookie } from "../features/user/userAPI";
 import { userSelector } from "../features/user/userSlice";
 import { useAppDispatch, useAppSelector } from "../app/hooks";
-import { DressesStore } from "./DressesStore";
-import { error } from "console";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -62,15 +60,12 @@ export const Login = () => {
         });
 
         const { ok, userArray, role, error } = data;
-        if(error) throw  error;
+        if (error) throw error;
         if (ok && !role) {
           navigate("/dresses-store");
         } else if (ok && role) {
           navigate("/admin");
         }
-        // else if (error)  {
-        //  throw new Error(`${error}`)
-        // }
       }
     } catch (error: any) {
       console.error(error);
@@ -85,35 +80,42 @@ export const Login = () => {
   return (
     <>
       <div className="FormContainer">
-        <form onSubmit={(ev) => handleOnSubmit(ev)}>
-          <div className="brand">
-            <h1>login</h1>
-          </div>
-          <input
-            type="name"
-            placeholder="Name"
-            name="name"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleChange(e)
-            }
-            min="3"
-          />
+        <div className="fromWrapper">
+          <form onSubmit={(ev) => handleOnSubmit(ev)}>
+            <div className="brand">
+              <h1>login</h1>
+            </div>
+            <input
+              type="name"
+              placeholder="Name"
+              name="name"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                handleChange(e)
+              }
+              min="3"
+            />
 
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-              handleChange(e)
-            }
-          />
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                handleChange(e)
+              }
+            />
 
-          <button type="submit"> Login</button>
-          <span>
-            Don't have an accout? <Link to="/register">Register</Link>
-          </span>
-        </form>
+            <button type="submit"> Login</button>
+            <span>
+              Don't have an accout? <Link to="/register">Register</Link>
+            </span>
+          </form>
+        </div>
+        <img
+          src="https://rachelsitbon.fashion/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-06-at-15.31.36.jpeg"
+          alt="dress"
+        />
       </div>
+
       <ToastContainer />
     </>
   );

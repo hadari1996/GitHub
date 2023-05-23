@@ -10,6 +10,7 @@ import Iventory from "../types/iventory";
 import { getQuantityPrice } from "../helpers/helpers";
 import SizeSelector from "./SizeSelector";
 import { Navbar } from "./Navbar";
+
 export const UpdateDress = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -51,21 +52,17 @@ export const UpdateDress = () => {
         const { data } = await axios.get(
           `/api/dresses/search-dress/${nameDress}`
         );
-
-        const { ok } = data;
-        if (!ok) throw new Error("Dress not exsits");
-        const { error } = data;
+        const { ok, error } = data;
+        if (!ok) throw error;
         if (error) throw error;
         const { dressesArr } = data;
-        // console.log(dressesArr)
-        // if (dressesArr  =='undefined' ) throw new Error
-
         setDress(dressesArr);
         const dress_id = dressesArr[0].dress_id;
 
         await getQuantityPrice(dress_id, setSizeQuantityObject);
       }
     } catch (error: any) {
+      alert(error);
       toast.error(error, toastOptions);
     }
   };
@@ -89,7 +86,7 @@ export const UpdateDress = () => {
             }
           />
 
-          <button type="submit"></button>
+          <button type="submit">Click Here</button>
         </form>
       </div>
 
@@ -98,6 +95,8 @@ export const UpdateDress = () => {
           return <SizeSelector sizeQuetetyObj={element} />;
         })}
       </div>
+
+      <ToastContainer />
     </>
   );
 };

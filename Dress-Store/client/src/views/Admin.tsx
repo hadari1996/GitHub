@@ -5,10 +5,7 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { userSelector } from "../features/user/userSlice";
 import { DressesStore } from "./DressesStore";
 import { ToastContainer, toast } from "react-toastify";
-import axios from "axios";
-import { Navbar } from "../components/Navbar";
 import { AddDress } from './../components/AddDress';
-import { UpdateDress } from "../components/UpdateDress";
 
 export const Admin = () => {
   const navigate = useNavigate();

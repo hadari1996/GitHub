@@ -5,14 +5,13 @@ import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "../style/model.scss";
-import Model from "./Model";
 import DressCard from "./DressCard";
 
 interface DressesContainerProps {
-  dresses: Dress[]
+  dresses: Dress[];
 }
 
-export const DressesContainer:FC<DressesContainerProps> = ({dresses}) => {
+export const DressesContainer: FC<DressesContainerProps> = ({ dresses }) => {
   const navigate = useNavigate();
   const [clickedImg, setClickedImg] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -24,8 +23,6 @@ export const DressesContainer:FC<DressesContainerProps> = ({dresses}) => {
     draggable: true,
     theme: "dark",
   };
-
-
 
   const handleClick = (
     src: SetStateAction<string>,
@@ -43,7 +40,11 @@ export const DressesContainer:FC<DressesContainerProps> = ({dresses}) => {
             dresses.map &&
             dresses.map((dress: Dress, index: number) => {
               return (
-                <DressCard dress={dress} index={index} setCurrentIndex={setCurrentIndex}/>
+                <DressCard
+                  dress={dress}
+                  index={index}
+                  setCurrentIndex={setCurrentIndex}
+                />
               );
             })}
         </div>

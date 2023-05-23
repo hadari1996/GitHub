@@ -20,7 +20,6 @@ const SizeSelector:FC<SizeSelectorProps> = ({sizeQuetetyObj}) => {
         try {
             const {data} = await axios.patch(`/api/dresses/${sizeQuetetyObj.dress_id}`, {quantity:quantetyState,size_id: sizeQuetetyObj.size_id})
             const {results}= data;
-            console.log(results)
             setQuantetyState(results)
         } catch (error) {
             console.error(error)
