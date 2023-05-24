@@ -3,6 +3,7 @@ import Dress from "./../../../client/src/types/dress";
 
 export async function getAllDresses(req, res) {
   try {
+    
     const query = `SELECT * FROM dresses`;
     connection.query(query, (err, results, fields) => {
       if (err) throw err;
@@ -17,13 +18,17 @@ export async function getAllDresses(req, res) {
 export async function searchDress(req, res) {
   try {
     const nameDress = req.params.name;
-    const query = `SELECT * FROM DRESSES WHERE dress_name LIKE ('%${nameDress}%')`;
+    const query = `SELECT * FROM dresses WHERE dress_name LIKE ('%${nameDress}%')`;
     connection.query(query, (error, results, fields) => {
       try {
-        if (results.length == 0) throw new Error("Dress is not exsits");
         if (error) throw error;
-        res.send({ ok: true, dressesArr: results });
+        if (results.length == 0) {
+          res.send({ ok: false, error: "Dress does not exsit" });
+        } else {
+          res.send({ ok: true, dressesArr: results });
+        }
       } catch (error) {
+  
         res.status(500).send({ ok: false, error: error.message });
       }
     });
@@ -176,32 +181,37 @@ export async function getDressSizes(req, res) {
 export async function deleteDress(req, res) {
   try {
     const { nameDress } = req.params;
-    const query1 = ` SELECT * FROM dresses WHERE dress_name='${nameDress}';`;
-    connection.query(query1, (error, results, fields) => {
-      try {
-        if (error) throw error;
-      } catch {
-        res.status(500).send({ error: error.message, status: false });
-      }
-    });
 
-    const query = ` DELETE FROM dresses WHERE dress_name='${nameDress}';`;
-    connection.query(query, (error, results, fields) => {
+    const query1 = ` SELECT * FROM dresses WHERE dress_name='${nameDress}';`;
+    connection.query(query1, (error, results1, fields) => {
       try {
         if (error) throw error;
-        const query = ` DELETE FROM inventory WHERE dress_id='${results.dress_id}';`;
-        connection.query(query, (error, results1, fields) => {
-          try {
-            if (error) throw error;
-            res.send({
-              ok: true,
-              results: nameDress,
-            });
-          } catch (error) {
-            res.status(500).send({ error: error.message, status: false });
-          }
-        });
-      } catch (error) {
+        if (results1.length == 0) {
+          res.send({ ok: false, error: "Dress does not exsit" });
+        } else {
+
+          const query = `DELETE FROM dresses WHERE dress_name='${nameDress}';`;
+          connection.query(query, (error, results, fields) => {
+            try {
+              if (error) throw error;
+              const query = `DELETE FROM inventory WHERE dress_id=${results1[0].dress_id}`;
+              connection.query(query, (error, results2, fields) => {
+                try {
+                  if (error) throw error;
+                  res.send({
+                    ok: true,
+                    results: nameDress,
+                  });
+                } catch (error) {
+                  res.status(500).send({ error: error.message, status: false });
+                }
+              });
+            } catch (error) {
+              res.status(500).send({ error: error.message, status: false });
+            }
+          });
+        }
+      } catch {
         res.status(500).send({ error: error.message, status: false });
       }
     });
@@ -265,7 +275,7 @@ export async function getMyDress(req, res) {
     ON renting_dresses.dress_id= dresses.dress_id
     INNER JOIN sizes
     ON renting_dresses.size_id= sizes.size_id
-    WHERE user_id='${userId}' `;
+     WHERE user_id='${userId}' `;
     connection.query(query, (err, results, fields) => {
       try {
         if (err) throw err;

@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-// import styled from "styled-components";
 import "../App.scss";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -68,7 +67,6 @@ export const Login = () => {
         }
       }
     } catch (error: any) {
-      console.error(error);
       toast.error(error, toastOptions);
     }
   };
@@ -82,10 +80,11 @@ export const Login = () => {
       <div className="FormContainer">
         <div className="fromWrapper">
           <form onSubmit={(ev) => handleOnSubmit(ev)}>
-            <div className="brand">
-              <h1>login</h1>
+            <div className="from_header">
+              <h1>LOGIN</h1>
             </div>
             <input
+              className="form_input"
               type="name"
               placeholder="Name"
               name="name"
@@ -96,6 +95,7 @@ export const Login = () => {
             />
 
             <input
+              className="form_input"
               type="password"
               placeholder="Password"
               name="password"
@@ -104,13 +104,16 @@ export const Login = () => {
               }
             />
 
-            <button type="submit"> Login</button>
-            <span>
+            <button type="submit" className="form_button">
+              Login
+            </button>
+            <span className="from_span">
               Don't have an accout? <Link to="/register">Register</Link>
             </span>
           </form>
         </div>
         <img
+          className="login_image"
           src="https://rachelsitbon.fashion/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-06-at-15.31.36.jpeg"
           alt="dress"
         />

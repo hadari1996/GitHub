@@ -67,7 +67,6 @@ export const Register = () => {
         }
       }
     } catch (error: any) {
-      console.error(error.message);
       toast.error(error, toastOptions);
     }
   };
@@ -97,53 +96,53 @@ export const Register = () => {
     <div className="FormContainer">
       <div className="fromWrapper">
         <form onSubmit={(ev) => handleOnSubmit(ev)}>
-          <div className="brand">
-            <h1>Register</h1>
+          <div className="from_header">
+            <h1>REGISTER</h1>
           </div>
-          <input
+          <input className="form_input"
             type="text"
             placeholder="Name"
             name="name"
             onChange={(e) => handleChange(e)}
           />
-          <input
+          <input className="form_input"
             type="text"
             placeholder="ID"
             name="user_Id"
             onChange={(e) => handleChange(e)}
           />
-          <input
+          <input className="form_input"
             type="text"
             placeholder="Email"
             name="email"
             onChange={(e) => handleChange(e)}
           />
-          <input
+          <input className="form_input"
             type="password"
             placeholder="Password"
             name="password"
             onChange={(e) => handleChange(e)}
           />
-          <input
+          <input className="form_input"
             type="password"
             placeholder="Confirm Password"
             name="confirmPassword"
             onChange={(e) => handleChange(e)}
           />
-          <input
+          <input className="form_input"
             type="text"
             placeholder="Phone number "
             name="phoneNum"
             onChange={(e) => handleChange(e)}
           />
 
-          <button type="submit"> Create User</button>
-          <span>
+          <button type="submit" className="form_button"> Create User</button>
+          <span className="from_span">
             Already have an account? <Link to="/">Login</Link>
           </span>
         </form>
       </div>
-      <img
+      <img className="login_image"
         src="https://rachelsitbon.fashion/wp-content/uploads/2022/10/WhatsApp-Image-2022-10-06-at-15.31.36.jpeg"
         alt="dress"
       />

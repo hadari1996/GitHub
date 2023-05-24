@@ -1,3 +1,4 @@
+
 import React, {
   SetStateAction,
   useState,
@@ -97,7 +98,7 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
             <select
               name="sizes"
               className="size_option"
-              onChange={(event: React.BaseSyntheticEvent) => handleSelect(event)}
+              onChange={(event: any) => handleSelect(event)}
             >
               {sizes?.map((size, index) => {
                 return (
