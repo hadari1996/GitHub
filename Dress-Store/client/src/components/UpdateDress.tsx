@@ -11,6 +11,7 @@ import Iventory from "../types/iventory";
 import { getQuantityPrice } from "../helpers/helpers";
 import SizeSelector from "./SizeSelector";
 import { Navbar } from "./Navbar";
+import "../style/updateDelAdd.scss";
 
 export const UpdateDress = () => {
   const navigate = useNavigate();
@@ -75,26 +76,30 @@ export const UpdateDress = () => {
   return (
     <>
       <Navbar componentRenderdBy="UPDATE" />
-      <h1>UpdateDress</h1>
-      <div className="admin_container">
+      <h1 className="from_header">Update Dress</h1>
+      <div className="fromUpdateDelAddWrapper">
         <form className="enter_dress" onSubmit={(event) => getDress(event)}>
           <input
             type="text"
             placeholder="Enter name dress"
             name="nameDress"
+            className="form_input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
           />
 
-          <button type="submit">Click Here</button>
+          <button type="submit"
+           className="form_button">עדכן שימלה</button>
         </form>
       </div>
-
-      <div className="inventory_dresses">
+      <div className="wrapper_inventory">
+    
         {sizeQuantityObject?.map((element) => {
-          return <SizeSelector sizeQuetetyObj={element} />;
+          return   <div className="inventory_dresses"><SizeSelector sizeQuetetyObj={element} />
+           </div>;
         })}
+     
       </div>
 
       <ToastContainer />

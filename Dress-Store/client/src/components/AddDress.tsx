@@ -10,7 +10,6 @@ import Iventory from "../types/iventory";
 import { getQuantityPrice } from "../helpers/helpers";
 import { Navbar } from "./Navbar";
 
-
 export const AddDress = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -52,7 +51,7 @@ export const AddDress = () => {
           priceDress,
         });
         const { ok, results } = data;
-         data =await axios.post(`/api/dresses/set-size-quantity/${results}`);
+        data = await axios.post(`/api/dresses/set-size-quantity/${results}`);
         if (!ok) throw new Error();
         else {
           const dress_id = results;
@@ -86,9 +85,9 @@ export const AddDress = () => {
 
   return (
     <>
-    <Navbar componentRenderdBy="ADD"/>
-      <h1>Add dress</h1>
-      <div className="admin_container">
+      <Navbar componentRenderdBy="ADD" />
+      <h1 className="from_header">Add Dress</h1>
+      <div className="fromUpdateDelAddWrapper">
         <form
           className="enter_dress"
           onSubmit={(event) => handleAddDress(event)}
@@ -97,6 +96,7 @@ export const AddDress = () => {
             type="text"
             placeholder="Enter src img dress"
             name="srcDress"
+            className="form_input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
@@ -105,6 +105,7 @@ export const AddDress = () => {
             type="text"
             placeholder="Enter name dress"
             name="nameDress"
+            className="form_input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
@@ -113,11 +114,14 @@ export const AddDress = () => {
             type="number"
             placeholder="Enter price dress"
             name="priceDress"
+            className="form_input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
           />
-          <button type="submit"></button>
+          <button type="submit" className="form_button">
+            הוסף שימלה
+          </button>
         </form>
       </div>
 

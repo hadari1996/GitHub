@@ -7,6 +7,8 @@ import { useAppDispatch, useAppSelector } from "../app/hooks";
 import { userSelector } from "../features/user/userSlice";
 import Dress from "../types/dress";
 import { Navbar } from "./Navbar";
+import "../style/updateDelAdd.scss";
+
 export const DeleteDress = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
@@ -66,20 +68,24 @@ export const DeleteDress = () => {
   return (
     <>
       <Navbar componentRenderdBy="Delete" />
-      <h1>DeleteDress</h1>
-      <div className="admin_container">
+      <h1 className="from_header">Delete Dress</h1>
+      <div className="fromUpdateDelAddWrapper">
         <form className="enter_dress" onSubmit={(event) => deleteDress(event)}>
           <input
             type="text"
             placeholder="Enter name dress to delete"
             name="nameDress"
+            className="form_input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
           />
 
-          <button type="submit"></button>
+          <button type="submit" className="form_button">
+            מחק שימלה
+          </button>
         </form>
+
         <ToastContainer />
       </div>
     </>
