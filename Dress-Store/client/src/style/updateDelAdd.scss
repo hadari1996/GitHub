@@ -33,7 +33,8 @@
         border: 0.1rem solid rgb(239, 157, 157);
         border-radius: 0.4rem;   
         font-size: 1rem;
-  
+        direction:rtl;
+        text-align:center;
   
         &:focus{
           border:  0.1rem solid rgb(133,1,35);
@@ -81,6 +82,38 @@
         align-items: center;
         justify-content: center;
         border:  0.1rem solid rgb(133,1,35);
+        .inventory_dresses_header{
+            text-align: center;
+            color:rgb(244, 128, 157);
+        }
+        .inventory_dresses_btn{
+            background-color: rgb(133,1,35);
+            color: white;
+            margin-right: 0.5rem;
+            padding: 0.5rem 0.5rem;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 0.4rem;
+            font-size: 1rem;
+            text-transform: uppercase;
+            transition: 0.5s ease-in-out;
+            &:hover{
+          background-color: rgb(244, 128, 157);
+            }
+          } 
+          .inventory_dresses_input{
+             margin: 0.5rem;
+            padding: 0.5rem;
+             border: 0.1rem solid rgb(239, 157, 157);
+             border-radius: 0.4rem;   
+             color: black;
+             text-align: right;
+             font-size: 1rem;
+             direction:rtl;
+             text-align:center;
+          }
+        }
     }
 
-}
+

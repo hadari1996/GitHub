@@ -9,6 +9,7 @@ import SizeSelector from "./SizeSelector";
 import Iventory from "../types/iventory";
 import { getQuantityPrice } from "../helpers/helpers";
 import { Navbar } from "./Navbar";
+import "../style/updateDelAdd.scss";
 
 export const AddDress = () => {
   const navigate = useNavigate();
@@ -125,9 +126,14 @@ export const AddDress = () => {
         </form>
       </div>
 
-      <div className="inventory_dresses">
+      <div className="wrapper_inventory">
         {sizeQuantityObject?.map((element) => {
-          return <SizeSelector sizeQuetetyObj={element} />;
+          return (
+            <div className="inventory_dresses">
+              {" "}
+              <SizeSelector sizeQuetetyObj={element} />
+            </div>
+          );
         })}
       </div>
       <ToastContainer />

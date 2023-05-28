@@ -1,4 +1,3 @@
-
 import React, {
   SetStateAction,
   useState,
@@ -87,8 +86,10 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
           onClick={() => handleClick(dress.img!, index)}
         />
         <div className="wrapper_Name_Price">
-          <h2>{dress.dress_price}</h2>
-          <h3>{dress.dress_name}</h3>
+          <div className="container_name_price">
+          <h2 className="dress_price">{dress.dress_price}</h2>
+          <h3 className="dress_name">{dress.dress_name}</h3>
+          </div>
           <form
             name={dress.dress_name}
             onSubmit={(event: React.BaseSyntheticEvent) => {
@@ -103,14 +104,14 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
               {sizes?.map((size, index) => {
                 return (
                   <>
-                    <option value={size.size} key={index}>
+                    <option className="option" value={size.size} key={index}>
                       {size.size}
                     </option>
                   </>
                 );
               })}
             </select>
-            <button type="submit" className="add-cart">
+            <button className="dress_card_submit" type="submit">
               ADD
             </button>
           </form>
