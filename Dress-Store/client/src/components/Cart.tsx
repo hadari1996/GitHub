@@ -42,17 +42,25 @@ const Cart: FC<CartProps> = ({ display }) => {
 
   return (
     <div className="cart" style={{ display: display }}>
-              {dressCart &&
-            dressCart.map &&
-            dressCart.map((item:any, index: number) => {
-              return (<div className="wrap_dress_cart" key={index}>
-                <img className="dress_cart" src={item.img} alt={item.nameDress} />
-                <h3 className="name_dress_cart">דגם:{item.dress_name}</h3> 
-                <h3 className="price_dress_cart">מחיר:{item.dress_price}</h3> 
-                <h3 className="size_dress_cart">מידה:{item.size}</h3> 
-                </div>
-              );
-            })}
+      {dressCart &&
+        dressCart.map &&
+        dressCart.map((item: any, index: number) => {
+          return (
+            <div className="wrap_dress_cart" key={index}>
+              <div className="wrap_dress_cart__img-conatiner">
+                <img
+                  src={item.img}
+                  alt={item.nameDress}
+                />
+              </div>
+              <div>
+                <h3 className="name_dress_cart">דגם:{item.dress_name}</h3>
+                <h3 className="price_dress_cart">מחיר:{item.dress_price}</h3>
+                <h3 className="size_dress_cart">מידה:{item.size}</h3>
+              </div>
+            </div>
+          );
+        })}
     </div>
   );
 };
