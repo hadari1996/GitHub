@@ -53,7 +53,7 @@ const Cart: FC<CartProps> = ({ display }) => {
                   alt={item.nameDress}
                 />
               </div>
-              <div>
+              <div className="dress-details">
                 <h3 className="name_dress_cart">דגם:{item.dress_name}</h3>
                 <h3 className="price_dress_cart">מחיר:{item.dress_price}</h3>
                 <h3 className="size_dress_cart">מידה:{item.size}</h3>
