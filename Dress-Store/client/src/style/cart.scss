@@ -16,7 +16,7 @@
     }
   }
 
-  .wrap_dress_cart {
+  .wrap-dress-cart {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -43,9 +43,9 @@
       flex-wrap: wrap;
       flex-direction: column;
       align-items: center;
-      .size_dress_cart,
-      .price_dress_cart,
-      .name_dress_cart {
+      .size-dress-cart,
+      .price-dress-cart,
+      .name-dress-cart {
         font-size: 12px;
       }
     }

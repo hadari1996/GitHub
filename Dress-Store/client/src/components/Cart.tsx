@@ -46,17 +46,17 @@ const Cart: FC<CartProps> = ({ display }) => {
         dressCart.map &&
         dressCart.map((item: any, index: number) => {
           return (
-            <div className="wrap_dress_cart" key={index}>
-              <div className="wrap_dress_cart__img-conatiner">
+            <div className="wrap-dress-cart" key={index}>
+              <div className="wrap-dress-cart__img-conatiner">
                 <img
                   src={item.img}
                   alt={item.nameDress}
                 />
               </div>
               <div className="dress-details">
-                <h3 className="name_dress_cart">דגם:{item.dress_name}</h3>
-                <h3 className="price_dress_cart">מחיר:{item.dress_price}</h3>
-                <h3 className="size_dress_cart">מידה:{item.size}</h3>
+                <h3 className="name-dress-cart">דגם:{item.dress_name}</h3>
+                <h3 className="price-dress-cart">מחיר:{item.dress_price}</h3>
+                <h3 className="size-ress-cart">מידה:{item.size}</h3>
               </div>
             </div>
           );

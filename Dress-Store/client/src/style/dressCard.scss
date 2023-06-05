@@ -1,45 +1,58 @@
-.wrapper_Name_Price{
+.wrapper_Img {
+  display: flex;
+  flex-wrap: wrap;
+  width: 20vw;
+  height: 50vh;
+  gap: 1rem;
+  margin: 2rem;
+  img {
+    cursor: pointer;
+    width: 100%;
+    height: 90%;
+  }
+  .wrapper-details  {
+    height: 15%;
+    width: 20vw;
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    padding-bottom: 3rem;
-.size_option, .dress_card_submit{
-background-color: rgb(133,1,35);
-color: white;
-width: 4vw;
-margin-right: 0.4rem;
-margin-top: 0.4rem;
-padding: 0.3rem 0.3rem;
-border: none;
-font-weight: bold;
-cursor: pointer;
-border-radius: 0.1rem;
-font-size:0.5rem;
-text-transform: uppercase;
-transition: 0.5s ease-in-out;
-&:hover{
-background-color: rgb(244, 128, 157);
-}
+    justify-content: space-between;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    background-color: rgb(230, 195, 195);
+    .container-name-price {
+      display: flex;
+      margin-right: 0.1rem;
+      margin-top: 0.4rem;
+      .name,
+      .price {
+        margin-left: 1rem;
+        padding: 0;
+        font-size: 1rem;
+      }
+    }
+    .size-option,
+    .dress-card-submit {
+      background-color: rgb(133, 1, 35);
+      color: white;
+      width: 4vw;
+      margin-right: 0.4rem;
+      margin-top: 0.4rem;
+      padding: 0.3rem 0.3rem;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0.1rem;
+      font-size: 0.5rem;
+      text-transform: uppercase;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        background-color: rgb(244, 128, 157);
+      }
 
-.option{
-    margin: 0;
-    padding: 0;
-    background-color: rgb(244, 128, 157);
-
-}
-
-
-}
-.container_name_price{
-    display: flex;
-    margin-right: 0.1rem;
-margin-top: 0.4rem;
-.dress_name ,.dress_price{
-    margin-left: 1rem;
-    padding: 0; 
-    font-size:1rem;
-
-}
-}
+      .option {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(244, 128, 157);
+      }
+    }
+  }
 }

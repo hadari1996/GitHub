@@ -76,27 +76,27 @@ export const UpdateDress = () => {
   return (
     <>
       <Navbar componentRenderdBy="UPDATE" />
-      <h1 className="from_header">Update Dress</h1>
-      <div className="fromUpdateDelAddWrapper">
-        <form className="enter_dress" onSubmit={(event) => getDress(event)}>
+      <h1 className="form-header">Update Dress</h1>
+      <div className="form-curd-dress">
+        <form className="form-curd-dress__form" onSubmit={(event) => getDress(event)}>
           <input
             type="text"
             placeholder="Enter name dress"
             name="nameDress"
-            className="form_input"
+            className="form-curd-dress__form__input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
           />
 
           <button type="submit"
-           className="form_button">עדכן שימלה</button>
+           className="form-curd-dress__form__submit">עדכן שימלה</button>
         </form>
       </div>
-      <div className="wrapper_inventory">
+      <div className="wrapper-inventory">
     
         {sizeQuantityObject?.map((element) => {
-          return   <div className="inventory_dresses"><SizeSelector sizeQuetetyObj={element} />
+          return   <div className="inventory-dresses"><SizeSelector sizeQuetetyObj={element} />
            </div>;
         })}
      

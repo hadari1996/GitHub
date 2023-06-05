@@ -1,119 +1,103 @@
-
-.from_header{
-    padding-top: 10vh;
-    text-align: center;
-    color: rgb(133,1,35);
-    font-family: 'Alkatra', cursive;
-  }
-
-.fromUpdateDelAddWrapper  {
-
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    gap:2rem;
-    font-family: 'Alkatra', cursive;
-    form{
-        
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      flex-direction: column;
-      gap:1rem;
-      border-radius: 1rem;
-      padding: 2rem 10rem;
-
-      .form_input{
-        background-color: transparent;
-       padding: 0.7rem;
-        border: 0.1rem solid rgb(239, 157, 157);
-        border-radius: 0.4rem;   
-        font-size: 1rem;
-        direction:rtl;
-        text-align:center;
-  
-        &:focus{
-          border:  0.1rem solid rgb(133,1,35);
-          background-color: rgb(230, 195, 195);
-          outline: none;
-        }
-      }
-      .form_button{
-        background-color: rgb(133,1,35);
-        color: white;
-        padding: 1rem 4rem;
-        border: none;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 0.4rem;
-        font-size: 1rem;
-        text-transform: uppercase;
-        transition: 0.5s ease-in-out;
-        &:hover{
-      background-color: rgb(244, 128, 157);
-        }
-      }  
-      .from_span{
-        color: black;
-        text-transform: uppercase;
-        a{
-          color:  rgb(244, 128, 157);
-          text-decoration: none;
-          font-weight: bold;
-  
-        }
-      }
-    }
-
+.form-header {
+  padding-top: 10vh;
+  text-align: center;
+  color: rgb(133, 1, 35);
+  font-family: "Alkatra", cursive;
 }
 
-.wrapper_inventory{
+.form-curd-dress {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 2rem;
+  font-family: "Alkatra", cursive;
+  &__form {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    .inventory_dresses{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        border:  0.1rem solid rgb(133,1,35);
-        .inventory_dresses_header{
-            text-align: center;
-            color:rgb(244, 128, 157);
-        }
-        .inventory_dresses_btn{
-            background-color: rgb(133,1,35);
-            color: white;
-            margin-right: 0.5rem;
-            padding: 0.5rem 0.5rem;
-            border: none;
-            font-weight: bold;
-            cursor: pointer;
-            border-radius: 0.4rem;
-            font-size: 1rem;
-            text-transform: uppercase;
-            transition: 0.5s ease-in-out;
-            &:hover{
-          background-color: rgb(244, 128, 157);
-            }
-          } 
-          .inventory_dresses_input{
-             margin: 0.5rem;
-            padding: 0.5rem;
-             border: 0.1rem solid rgb(239, 157, 157);
-             border-radius: 0.4rem;   
-             color: black;
-             text-align: right;
-             font-size: 1rem;
-             direction:rtl;
-             text-align:center;
-          }
-        }
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 1rem;
+    padding: 2rem 10rem;
+
+    &__input {
+      background-color: transparent;
+      padding: 0.7rem;
+      border: 0.1rem solid rgb(239, 157, 157);
+      border-radius: 0.4rem;
+      font-size: 1rem;
+      direction: rtl;
+      text-align: center;
+
+      &:focus {
+        border: 0.1rem solid rgb(133, 1, 35);
+        background-color: rgb(230, 195, 195);
+        outline: none;
+      }
     }
+    &__submit {
+      background-color: rgb(133, 1, 35);
+      color: white;
+      padding: 1rem 4rem;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0.4rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        background-color: rgb(244, 128, 157);
+      }
+    }
+  }
+}
 
-
+.wrapper-inventory {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  .inventory-dresses {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    border: 0.1rem solid rgb(133, 1, 35);
+    .inventory-dresses-header {
+      text-align: center;
+      color: rgb(244, 128, 157);
+    }
+    .inventory-dresses-btn {
+      background-color: rgb(133, 1, 35);
+      color: white;
+      margin-right: 0.5rem;
+      padding: 0.5rem 0.5rem;
+      border: none;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 0.4rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      transition: 0.5s ease-in-out;
+      &:hover {
+        background-color: rgb(244, 128, 157);
+      }
+    }
+    .inventory-dresses-input {
+      margin: 0.5rem;
+      padding: 0.5rem;
+      border: 0.1rem solid rgb(239, 157, 157);
+      border-radius: 0.4rem;
+      color: black;
+      text-align: right;
+      font-size: 1rem;
+      direction: rtl;
+      text-align: center;
+    }
+  }
+}

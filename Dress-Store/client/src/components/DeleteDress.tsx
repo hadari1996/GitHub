@@ -68,20 +68,20 @@ export const DeleteDress = () => {
   return (
     <>
       <Navbar componentRenderdBy="Delete" />
-      <h1 className="from_header">Delete Dress</h1>
-      <div className="fromUpdateDelAddWrapper">
-        <form className="enter_dress" onSubmit={(event) => deleteDress(event)}>
+      <h1 className="form-header">Delete Dress</h1>
+      <div className="form-curd-dress">
+        <form className="form-curd-dress__form" onSubmit={(event) => deleteDress(event)}>
           <input
             type="text"
             placeholder="Enter name dress to delete"
             name="nameDress"
-            className="form_input"
+            className="form-curd-dress__form__input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
           />
 
-          <button type="submit" className="form_button">
+          <button type="submit" className="form-curd-dress__form__submit">
             מחק שימלה
           </button>
         </form>

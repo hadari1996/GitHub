@@ -87,17 +87,17 @@ export const AddDress = () => {
   return (
     <>
       <Navbar componentRenderdBy="ADD" />
-      <h1 className="from_header">Add Dress</h1>
-      <div className="fromUpdateDelAddWrapper">
+      <h1 className="form-header">Add Dress</h1>
+      <div className="form-curd-dress">
         <form
-          className="enter_dress"
+          className="form-curd-dress__form"
           onSubmit={(event) => handleAddDress(event)}
         >
           <input
             type="text"
             placeholder="Enter src img dress"
             name="srcDress"
-            className="form_input"
+            className="form-curd-dress__form__input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
@@ -106,7 +106,7 @@ export const AddDress = () => {
             type="text"
             placeholder="Enter name dress"
             name="nameDress"
-            className="form_input"
+            className="form-curd-dress__form__input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
@@ -115,12 +115,12 @@ export const AddDress = () => {
             type="number"
             placeholder="Enter price dress"
             name="priceDress"
-            className="form_input"
+            className="form-curd-dress__form__input"
             onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               handleChange(e)
             }
           />
-          <button type="submit" className="form_button">
+          <button type="submit" className="form-curd-dress__form__submit">
             הוסף שימלה
           </button>
         </form>

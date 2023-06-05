@@ -1,27 +1,65 @@
 .navbar {
+  height: 15vh;
+  width: 100vw;
+  border-bottom: 0.4rem;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: left;
-  height: 100px;
-  max-width: 1350px;
-  background-color: burlywood;
+  justify-content: space-between;
+  background-color: rgba(170, 45, 77, 0.849);
   position: relative;
+  font-family: "Alkatra", cursive;
 }
-.navbar ul {
+.navbar__ul {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  align-items: center;
 }
-.navbar ul li {
+.navbar__ul__search {
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: right;
+}
+.navbar__ul__search__input {
+  margin-left: 2vw;
+  padding: 0.7rem;
+  border: 0.1rem solid rgb(239, 157, 157);
+  border-radius: 0.4rem;
+  color: black;
+  text-align: right;
+  font-size: 1rem;
+}
+.navbar__ul__logout {
+  position: absolute;
+  right: 5vw;
+  height: 5vh;
+  width: 5vw;
+}
+.navbar__ul__logout:hover {
+  height: 6vh;
+  width: 6vw;
+}
+.navbar__ul__li {
   list-style: none;
-  padding: 0.5rem;
-  text-underline-offset: none;
+  text-decoration: none;
+  padding: 0.2rem;
+  font-size: 15px;
+  color: black;
 }
-.navbar ul li .heart {
-  height: 7vh;
-  width: 7vw;
+.navbar__ul__li .icons-navbar {
+  height: 4vh;
+  width: 5vw;
 }
-.navbar ul li input {
-  font-family: FontAwesome;
+.navbar__ul__li__a {
+  text-decoration: none;
+  font-family: "Alkatra", cursive;
+  font-size: 1.5vw;
+  color: black;
+}
+.navbar__ul__li__a:visited {
+  color: black;
+}
+.navbar__ul__li__a:hover {
+  color: rgba(255, 255, 255, 0.737254902);
 }

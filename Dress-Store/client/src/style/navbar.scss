@@ -9,16 +9,17 @@
   background-color: rgba(170, 45, 77, 0.849);
   position: relative;
   font-family: "Alkatra", cursive;
-  .navbar_ul {
+
+  &__ul {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: center;
-    .button_navbar {
+    &__search {
       display: flex;
       flex-wrap: wrap;
       justify-items: right;
-      .input_search_navbar {
+      &__input {
         margin-left: 2vw;
         padding: 0.7rem;
         border: 0.1rem solid rgb(239, 157, 157);
@@ -28,15 +29,29 @@
         font-size: 1rem;
       }
     }
+    &__logout {
+      position: absolute;
+      right: 5vw;
+      height: 5vh;
+      width: 5vw;
+      &:hover {
+        height: 6vh;
+        width: 6vw;
+      }
+    }
 
-    li {
+    &__li {
       list-style: none;
       text-decoration: none;
       padding: 0.2rem;
       font-size: 15px;
       color: black;
+      .icons-navbar {
+        height: 4vh;
+        width: 5vw;
+      }
 
-      a {
+      &__a {
         text-decoration: none;
         font-family: "Alkatra", cursive;
         font-size: 1.5vw;
@@ -48,21 +63,6 @@
           color: #ffffffbc;
         }
       }
-
-      .icons_navbar {
-        height: 4vh;
-        width: 5vw;
-      }
     }
-  }
-}
-.logout_navbar {
-  position: absolute;
-  right: 5vw;
-  height: 5vh;
-  width: 5vw;
-  &:hover {
-    height: 6vh;
-    width: 6vw;
   }
 }

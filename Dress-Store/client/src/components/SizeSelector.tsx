@@ -31,16 +31,16 @@ const SizeSelector: FC<SizeSelectorProps> = ({ sizeQuetetyObj }) => {
   };
   return (
     <div>
-      <h1 className="inventory_dresses_header">{sizeQuetetyObj.size}</h1>
+      <h1 className="inventory-dresses-header">{sizeQuetetyObj.size}</h1>
       <input
         type="number"
         value={quantetyState}
-        className="inventory_dresses_input"
+        className="inventory-dresses-input"
         onInput={(ev: any) => {
           setQuantetyState(ev.target.value);
         }}
       />
-      <button className="inventory_dresses_btn" onClick={handleSaveQuentity}>
+      <button className="inventory-dresses-btn" onClick={handleSaveQuentity}>
         Save
       </button>
     </div>

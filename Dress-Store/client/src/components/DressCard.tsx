@@ -85,10 +85,10 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
           alt={dress.dress_name}
           onClick={() => handleClick(dress.img!, index)}
         />
-        <div className="wrapper_Name_Price">
-          <div className="container_name_price">
-          <h2 className="dress_price">{dress.dress_price}</h2>
-          <h3 className="dress_name">{dress.dress_name}</h3>
+        <div className="wrapper-details">
+          <div className="container-name-price">
+            <h2 className="container-name-price price">{dress.dress_price}</h2>
+            <h3 className="container-name-price name">{dress.dress_name}</h3>
           </div>
           <form
             name={dress.dress_name}
@@ -98,7 +98,7 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
           >
             <select
               name="sizes"
-              className="size_option"
+              className="size-option"
               onChange={(event: any) => handleSelect(event)}
             >
               {sizes?.map((size, index) => {
@@ -111,7 +111,7 @@ const DressCard: FC<DressProps> = ({ dress, index, setCurrentIndex }) => {
                 );
               })}
             </select>
-            <button className="dress_card_submit" type="submit">
+            <button className="dress-card-submit" type="submit">
               ADD
             </button>
           </form>

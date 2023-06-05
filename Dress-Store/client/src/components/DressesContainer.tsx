@@ -33,8 +33,8 @@ export const DressesContainer: FC<DressesContainerProps> = ({ dresses }) => {
 
   return (
     <>
-      <div className="dress_container">
-        <div className="wrapper">
+      <div className="dress-container">
+        <div className="dress-container wrapper">
           {dresses &&
             dresses.map &&
             dresses.map((dress: Dress, index: number) => {
